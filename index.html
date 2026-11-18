@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tansley Express: Dyslexia-Friendly Children's Books by Tania Jacobs</title>
+<meta name="description" content="Dyslexia-friendly children's story books, colouring books and printables, created by Tania Jacobs, teacher and mum. Home of Tansley Tales.">
+<link rel="canonical" href="https://tansleyexpress.com/">
+<link rel="icon" type="image/png" href="favicon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Tansley Express">
+<meta property="og:title" content="Tansley Express: Dyslexia-Friendly Children's Books">
+<meta property="og:description" content="Story books, colouring books and printables made for every kind of reader.">
+<meta property="og:image" content="https://tansleyexpress.com/icon.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Lexend:wght@300;400;600&display=swap">
+<style>
+:root{
+  --navy:#0e2a47; --sage:#a7b89a; --sage-dark:#5f7352; --peach:#f3c9b2; --lavender:#d7c7e6; --cream:#f7f2e9;
+  --paper:#fffdf8; --ink:#0e2a47; --muted:#4c5d70; --line:#e7dfd0;
+  --display:"Fredoka","Trebuchet MS",sans-serif; --body:"Lexend","Verdana",sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--body);font-size:1.1rem;line-height:1.75;letter-spacing:.01em}
+img{max-width:100%;display:block}
+a{color:var(--navy)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--sage-dark);outline-offset:3px}
+.wrap{max-width:1100px;margin:0 auto;padding:0 1.25rem}
+.skip{position:absolute;left:-999px}.skip:focus{left:1rem;top:1rem;background:#fff;padding:.5rem 1rem;z-index:10}
+
+/* Header */
+header{background:var(--paper);color:var(--navy);position:sticky;top:0;z-index:5;border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.7rem 1.25rem;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:.7rem;color:var(--navy);text-decoration:none}
+.brand img{width:54px;height:auto}
+.brand span{font-family:var(--display);font-size:1.5rem;font-weight:600}
+nav ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.3rem 1.2rem}
+nav a{color:var(--navy);text-decoration:none;font-size:1rem;padding:.3rem 0;border-bottom:2px solid transparent}
+nav a:hover{border-bottom-color:var(--sage)}
+
+/* Hero */
+.hero{background:linear-gradient(160deg,var(--cream) 0,#fbf3ec 55%,#f4ecf7 100%);color:var(--navy);padding:4rem 0 4.5rem}
+.hero .wrap{display:grid;grid-template-columns:1.3fr 1fr;gap:2.5rem;align-items:center}
+.hero h1{font-family:var(--display);font-size:clamp(2rem,4.5vw,3.1rem);line-height:1.2;margin:0 0 1rem;font-weight:600}
+.hero p{font-size:1.2rem;color:var(--muted);max-width:34rem;margin:0 0 1.6rem}
+.hero img{max-width:340px;margin:0 auto}
+.btn{display:inline-block;background:var(--navy);color:var(--cream);font-weight:600;text-decoration:none;padding:.8rem 1.5rem;border-radius:999px;border:0;font-family:var(--body);font-size:1.05rem;cursor:pointer}
+.btn:hover{background:#1d4369}
+.btn.ghost{background:transparent;color:var(--navy);border:2px solid var(--sage);margin-left:.6rem}
+.btn.small{padding:.55rem 1.1rem;font-size:.98rem}
+.btn.off{background:var(--cream);color:var(--muted);cursor:default}
+
+/* Promise strip */
+.promise{background:var(--paper);border-bottom:1px solid var(--line)}
+.promise ul{list-style:none;margin:0 auto;padding:1.4rem 1.25rem;display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+.promise li{display:flex;gap:.6rem;align-items:flex-start;font-size:1rem}
+.promise b{display:block;font-weight:600}
+.dot{flex:0 0 2.2rem;height:2.2rem;border-radius:50%;background:var(--peach);color:var(--navy);display:grid;place-items:center;font-size:1.1rem}
+
+/* Sections */
+section{padding:3.5rem 0}
+h2{font-family:var(--display);font-weight:600;font-size:2rem;margin:0 0 .4rem;color:var(--navy)}
+.lead{color:var(--muted);margin:0 0 1.8rem;max-width:44rem}
+.cats{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+.cat{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:1.4rem;text-decoration:none;color:var(--ink);transition:transform .15s}
+.cat:hover{transform:translateY(-3px)}
+.cat .ico{font-size:2rem}
+.cat h3{font-family:var(--display);font-weight:600;margin:.4rem 0 .2rem;font-size:1.3rem;color:var(--navy)}
+.cat p{margin:0;font-size:.98rem;color:var(--muted)}
+
+/* Filter + grid */
+.filters{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:1.6rem}
+.filters button{font-family:var(--body);font-size:1rem;background:var(--paper);border:2px solid var(--line);color:var(--ink);padding:.45rem 1.1rem;border-radius:999px;cursor:pointer}
+.filters button[aria-pressed="true"]{background:var(--navy);border-color:var(--navy);color:var(--cream)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1.4rem}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column}
+.card .pic{aspect-ratio:4/3;background:linear-gradient(150deg,var(--lavender),var(--peach));overflow:hidden}
+.card .pic img{width:100%;height:100%;object-fit:cover}
+.card .pic.text{display:grid;place-items:center;text-align:center;padding:1rem;font-family:var(--display);font-size:1.35rem;color:var(--navy);font-weight:600}
+.card .body{padding:1.1rem 1.2rem 1.3rem;display:flex;flex-direction:column;gap:.5rem;flex:1}
+.tag{align-self:flex-start;font-size:.85rem;background:#e9efe4;color:var(--sage-dark);padding:.1rem .7rem;border-radius:999px}
+.card h3{font-family:var(--display);font-weight:600;font-size:1.25rem;line-height:1.3;margin:0;color:var(--navy)}
+.card p{margin:0;font-size:1rem;color:var(--muted)}
+.card .actions{margin-top:auto;padding-top:.6rem;display:flex;flex-wrap:wrap;gap:.5rem;align-items:center}
+.card .actions a.link{font-size:.98rem}
+
+/* Tales band */
+.tales{background:var(--lavender);color:var(--navy)}
+.tales .wrap{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center}
+.tales h2{color:var(--navy)}
+.covers{display:grid;grid-template-columns:repeat(3,1fr);gap:.6rem}
+.covers img{border-radius:10px;aspect-ratio:4/3;object-fit:cover}
+
+/* About */
+.about .wrap{display:grid;grid-template-columns:1fr 2fr;gap:2.5rem;align-items:start}
+.about img{max-width:260px}
+.about p{max-width:42rem}
+
+/* Contact / footer */
+.contact{background:var(--paper);border-top:1px solid var(--line)}
+footer{background:var(--navy);color:var(--peach);padding:2rem 0;font-size:.95rem}
+footer a{color:var(--cream)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem}
+
+@media (max-width:860px){
+  .hero .wrap,.tales .wrap,.about .wrap{grid-template-columns:1fr}
+  .hero img{max-width:220px}
+  .promise ul,.cats{grid-template-columns:1fr 1fr}
+  .btn.ghost{margin:.7rem 0 0}
+}
+@media (max-width:520px){.promise ul,.cats{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to the books</a>
+
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="#top"><img src="icon.webp" alt=""><span>Tansley Express</span></a>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="#books">Books</a></li>
+        <li><a href="#categories">Categories</a></li>
+        <li><a href="#tales">Free stories</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <h1>Children's books made for every kind of reader</h1>
+        <p>Story books, colouring books and printables created by Tania Jacobs, a teacher and mum who knows that some children learn differently, and that every one of them deserves to love books.</p>
+        <a class="btn" href="#books">Browse the books</a>
+        <a class="btn ghost" href="https://tansleytales.com">Read free stories</a>
+      </div>
+      <img src="icon.webp" alt="Tansley Express logo: a girl leaping with a balloon">
+    </div>
+  </div>
+
+  <div class="promise">
+    <ul class="wrap">
+      <li><span class="dot" aria-hidden="true">Aa</span><span><b>Dyslexia-friendly</b>Clear fonts, calm pages, room to breathe.</span></li>
+      <li><span class="dot" aria-hidden="true">✎</span><span><b>Made by a teacher</b>Shaped by years in the classroom.</span></li>
+      <li><span class="dot" aria-hidden="true">♥</span><span><b>Kind stories</b>Gentle, warm and inclusive.</span></li>
+      <li><span class="dot" aria-hidden="true">⬇</span><span><b>Instant downloads</b>Print at home or in class.</span></li>
+    </ul>
+  </div>
+
+  <section id="categories">
+    <div class="wrap">
+      <h2>Find the right book</h2>
+      <p class="lead">Every book sits in one clear shelf, so you can find what you need quickly.</p>
+      <div class="cats">
+        <a class="cat" href="#books" data-go="Story Books"><div class="ico" aria-hidden="true">📖</div><h3>Story Books</h3><p>Picture books and longer reads to enjoy together.</p></a>
+        <a class="cat" href="#books" data-go="Colouring Books"><div class="ico" aria-hidden="true">🖍️</div><h3>Colouring Books</h3><p>Calm, creative pages to colour and keep.</p></a>
+        <a class="cat" href="#books" data-go="Faith and Christmas"><div class="ico" aria-hidden="true">⭐</div><h3>Faith and Christmas</h3><p>Bible verses, nativity stories and seasonal gifts.</p></a>
+        <a class="cat" href="#books" data-go="Printables and Games"><div class="ico" aria-hidden="true">🎲</div><h3>Printables and Games</h3><p>Family games and activities to print at home.</p></a>
+      </div>
+    </div>
+  </section>
+
+  <section id="books" style="padding-top:0">
+    <div class="wrap" id="main">
+      <h2>The bookshelf</h2>
+      <p class="lead">Choose a shelf, or browse everything.</p>
+      <div class="filters" role="group" aria-label="Filter books by category"></div>
+      <div class="grid" id="grid"></div>
+    </div>
+  </section>
+
+  <section id="tales" class="tales">
+    <div class="wrap">
+      <div>
+        <h2>Free stories on Tansley Tales</h2>
+        <p>Our sister site, Tansley Tales, has free stories to read together or watch read aloud. Every story has a dyslexia-friendly version, so no reader is left out.</p>
+        <a class="btn" href="https://tansleytales.com">Visit Tansley Tales</a>
+      </div>
+      <div class="covers">
+        <img src="milo.webp" alt="Milo and the Starry Sand">
+        <img src="benny.webp" alt="Benny the Bunny's Bold Leap">
+        <img src="nina.webp" alt="Nina's Tasty Trip">
+        <img src="lion.webp" alt="The Lion Who Was Afraid of the Dark">
+        <img src="bramble1.webp" alt="Bramble and the First Frost">
+        <img src="knights.webp" alt="The Number Knights">
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <div class="wrap">
+      <img src="icon.webp" alt="">
+      <div>
+        <h2>About Tania Jacobs</h2>
+        <p>I'm Tania, a teacher, a children's author and a single mum. My own child learns differently, and watching homework turn into tears taught me something important: when a book is hard to read, children start to believe they are the problem. They aren't.</p>
+        <p>Tansley Express is where I share books made the way I wish more books were made. Clear, calm pages. Stories with heart. Characters every child can see themselves in. Whether your child is a confident reader or still finding their way, there is a place for them here.</p>
+        <p>Thank you for being part of this little corner of the world.</p>
+        <p><b>Tania</b></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <h2>Get in touch</h2>
+      <p class="lead">Questions about a book, a download or using our books in your school? I'd love to hear from you.</p>
+      <a class="btn" href="mailto:tansleyexpress@gmail.com">Email tansleyexpress@gmail.com</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="yr">2026</span> Tansley Express. Created by Tania Jacobs.</span>
+    <span><a href="https://tansleytales.com">Tansley Tales</a> · <a href="refunds.html">Refund policy</a> · <a href="privacy.html">Privacy</a></span>
+  </div>
+</footer>
+
+<script>
+/* ===== THE BOOK LIST =====
+   To add or change a book, edit this list only.
+   buy:    paste the Payhip (or Amazon) link here. Empty = shows "Coming soon".
+   read:   link to read it free on Tansley Tales (optional).
+   img:    picture file in the img folder. Leave empty for a text cover.  */
+const BOOKS = [
+  {cat:"Faith and Christmas", also:"Colouring Books", title:"Ivy's Christmas Story", text:"A gentle Christmas colouring storybook about discovering the true meaning of Christmas.", img:"", buy:"", price:""},
+  {cat:"Faith and Christmas", also:"Colouring Books", title:"50 Memory Verses to Colour and Remember", text:"Fifty Bible memory verses to colour, learn and keep close.", img:"", buy:"", price:"", note:"Coming soon"},
+  {cat:"Faith and Christmas", also:"Colouring Books", title:"50 Memory Verses to Colour and Remember: Teen Edition", text:"The memory verse colouring book, designed for older children and teens.", img:"", buy:"", price:"", note:"Coming soon"},
+  {cat:"Colouring Books", title:"Patch's Path to Calm and Confidence", text:"Colour along with Patch the hedgehog while learning calm, confident ways to handle big feelings.", img:"", buy:"", price:""},
+  {cat:"Printables and Games", also:"Faith and Christmas", title:"Dyslexia-Friendly Christmas Family Games Bundle", text:"Printable Christmas games and Letter to Santa pages, easy to read and fun for the whole family.", img:"", buy:"", price:""},
+  {cat:"Story Books", title:"Milo and the Starry Sand", text:"A soft, starry bedtime story about drawing, friendship and wonder.", img:"milo", read:"https://tansleytales.com/milo-and-the-starry-sand.html", buy:""},
+  {cat:"Story Books", title:"Benny the Bunny's Bold Leap", text:"A little bunny finds his courage, one brave hop at a time.", img:"benny", read:"https://tansleytales.com/benny-the-bunnys-bold-leap.html", buy:""},
+  {cat:"Story Books", title:"Benny and the Secret Meadow", text:"Benny and Lila discover a hidden meadow full of surprises.", img:"benny2", read:"https://tansleytales.com/benny-and-the-secret-meadow.html", buy:""},
+  {cat:"Story Books", title:"Nina's Tasty Trip: The Magic Spoon", text:"Nina and Grandma travel the world one delicious dish at a time.", img:"nina", read:"https://tansleytales.com/ninas-tasty-trip-the-magic-spoon.html", buy:""},
+  {cat:"Story Books", title:"The Lion Who Was Afraid of the Dark", text:"Lumo the lion learns that the night is full of friends.", img:"lion", read:"https://tansleytales.com/the-lion-who-was-afraid-of-the-dark.html", buy:""},
+  {cat:"Story Books", title:"Bramble and the First Frost", text:"Bramble gets ready for winter, with real nature facts to learn along the way.", img:"bramble1", read:"https://tansleytales.com/bramble-and-the-first-frost.html", buy:""},
+  {cat:"Story Books", title:"Bramble Braves the Snow", text:"Bramble's winter adventure continues in the deep snow.", img:"bramble2", read:"https://tansleytales.com/bramble-braves-the-snow.html", buy:""},
+  {cat:"Story Books", title:"Eri and the Magic Book", text:"Two sisters find a secret door and learn they are stronger together.", img:"eri", read:"https://tansleytales.com/eri-and-the-magic-book.html", buy:""},
+  {cat:"Story Books", title:"The Number Knights", text:"A maths adventure for children who think they don't like maths.", img:"knights", read:"https://tansleytales.com/the-number-knights-short-read.html", buy:""},
+  {cat:"Story Books", title:"Max and Mia's Autumn Week", text:"A cosy week of autumn fun, from leaf piles to painting pumpkins.", img:"maxmia", read:"https://tansleytales.com/max-and-mias-autumn-week.html", buy:""},
+  {cat:"Story Books", title:"The Sounds of Autumn", text:"Listen closely and discover all the sounds autumn makes.", img:"soa", read:"https://tansleytales.com/the-sounds-of-autumn.html", buy:""}
+];
+
+const CATS = ["All books","Story Books","Colouring Books","Faith and Christmas","Printables and Games"];
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const grid = document.getElementById("grid");
+const filters = document.querySelector(".filters");
+
+function card(b){
+  const pic = b.img
+    ? `<div class="pic"><img src="${esc(b.img)}.webp" alt="" loading="lazy"></div>`
+    : `<div class="pic text">${esc(b.title)}</div>`;
+  const buy = b.buy
+    ? `<a class="btn small" href="${esc(b.buy)}">Buy${b.price ? " · " + esc(b.price) : ""}</a>`
+    : `<span class="btn small off">${esc(b.note || (b.read ? "Print book coming soon" : "Coming soon"))}</span>`;
+  const read = b.read ? `<a class="link" href="${esc(b.read)}">Read free</a>` : "";
+  return `<article class="card">${pic}<div class="body"><span class="tag">${esc(b.cat)}</span><h3>${esc(b.title)}</h3><p>${esc(b.text)}</p><div class="actions">${buy}${read}</div></div></article>`;
+}
+function show(cat){
+  grid.innerHTML = BOOKS.filter(b => cat === "All books" || b.cat === cat || b.also === cat).map(card).join("");
+  filters.querySelectorAll("button").forEach(btn => btn.setAttribute("aria-pressed", btn.textContent === cat));
+}
+filters.innerHTML = CATS.map(c => `<button type="button" aria-pressed="false">${c}</button>`).join("");
+filters.addEventListener("click", e => { if (e.target.tagName === "BUTTON") show(e.target.textContent); });
+document.querySelectorAll("[data-go]").forEach(a => a.addEventListener("click", () => show(a.dataset.go)));
+document.getElementById("yr").textContent = new Date().getFullYear();
+show("All books");
+</script>
+</body>
+</html>
