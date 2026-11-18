@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Tansley Express: Dyslexia-Friendly Children's Books by Tania Jacobs</title>
-<meta name="description" content="Dyslexia-friendly children's story books, colouring books and printables, created by Tania Jacobs, teacher and mum. Home of Tansley Tales.">
+<meta name="description" content="Dyslexia-friendly children's story books, activity books, workbooks and colouring books, created by Tania Jacobs, teacher and mum. Home of Tansley Tales.">
 <link rel="canonical" href="https://tansleyexpress.com/">
 <link rel="icon" type="image/png" href="favicon.png">
 <meta property="og:type" content="website">
@@ -62,7 +62,7 @@ nav a:hover{border-bottom-color:var(--sage)}
 section{padding:3.5rem 0}
 h2{font-family:var(--display);font-weight:600;font-size:2rem;margin:0 0 .4rem;color:var(--navy)}
 .lead{color:var(--muted);margin:0 0 1.8rem;max-width:44rem}
-.cats{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+.cats{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
 .cat{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:1.4rem;text-decoration:none;color:var(--ink);transition:transform .15s}
 .cat:hover{transform:translateY(-3px)}
 .cat .ico{font-size:2rem}
@@ -106,7 +106,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem}
 @media (max-width:860px){
   .hero .wrap,.tales .wrap,.about .wrap{grid-template-columns:1fr}
   .hero img{max-width:220px}
-  .promise ul,.cats{grid-template-columns:1fr 1fr}
+  .promise ul{grid-template-columns:1fr 1fr}.cats{grid-template-columns:1fr 1fr}
   .btn.ghost{margin:.7rem 0 0}
 }
 @media (max-width:520px){.promise ul,.cats{grid-template-columns:1fr}}
@@ -136,7 +136,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem}
     <div class="wrap">
       <div>
         <h1>Children's books made for every kind of reader</h1>
-        <p>Story books, colouring books and printables created by Tania Jacobs, a teacher and mum who knows that some children learn differently, and that every one of them deserves to love books.</p>
+        <p>Story books, activity books and colouring books created by Tania Jacobs, a teacher and mum who knows that some children learn differently, and that every one of them deserves to love books.</p>
         <a class="btn" href="#books">Browse the books</a>
         <a class="btn ghost" href="https://tansleytales.com">Read free stories</a>
       </div>
@@ -159,9 +159,14 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem}
       <p class="lead">Every book sits in one clear shelf, so you can find what you need quickly.</p>
       <div class="cats">
         <a class="cat" href="#books" data-go="Story Books"><div class="ico" aria-hidden="true">📖</div><h3>Story Books</h3><p>Picture books and longer reads to enjoy together.</p></a>
+        <a class="cat" href="#books" data-go="Handwriting and Pencil Control"><div class="ico" aria-hidden="true">✏️</div><h3>Handwriting and Pencil Control</h3><p>Tracing, pencil control and scissor skills.</p></a>
+        <a class="cat" href="#books" data-go="Bilingual Editions"><div class="ico" aria-hidden="true">🌍</div><h3>Bilingual Editions</h3><p>Spanish, Italian and Japanese with English.</p></a>
+        <a class="cat" href="#books" data-go="Maths and Puzzles"><div class="ico" aria-hidden="true">🔢</div><h3>Maths and Puzzles</h3><p>Riddles, word searches and focus games.</p></a>
+        <a class="cat" href="#books" data-go="Fun Facts and Learning"><div class="ico" aria-hidden="true">🦕</div><h3>Fun Facts and Learning</h3><p>Dinosaurs, oceans, seasons and our planet.</p></a>
         <a class="cat" href="#books" data-go="Colouring Books"><div class="ico" aria-hidden="true">🖍️</div><h3>Colouring Books</h3><p>Calm, creative pages to colour and keep.</p></a>
-        <a class="cat" href="#books" data-go="Faith and Christmas"><div class="ico" aria-hidden="true">⭐</div><h3>Faith and Christmas</h3><p>Bible verses, nativity stories and seasonal gifts.</p></a>
-        <a class="cat" href="#books" data-go="Printables and Games"><div class="ico" aria-hidden="true">🎲</div><h3>Printables and Games</h3><p>Family games and activities to print at home.</p></a>
+        <a class="cat" href="#books" data-go="Seasonal and Holidays"><div class="ico" aria-hidden="true">🎄</div><h3>Seasonal and Holidays</h3><p>Christmas, Easter, Valentine's and autumn.</p></a>
+        <a class="cat" href="#books" data-go="Faith Books"><div class="ico" aria-hidden="true">⭐</div><h3>Faith Books</h3><p>Bible verses and nativity stories.</p></a>
+        <a class="cat" href="#books" data-go="Planners and Trackers"><div class="ico" aria-hidden="true">📒</div><h3>Planners and Trackers</h3><p>Homework and reading trackers.</p></a>
       </div>
     </div>
   </section>
@@ -229,14 +234,10 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem}
    read:   link to read it free on Tansley Tales (optional).
    img:    picture file in the img folder. Leave empty for a text cover.  */
 const BOOKS = [
-  {cat:"Faith and Christmas", also:"Colouring Books", title:"Ivy's Christmas Story", text:"A gentle Christmas colouring storybook about discovering the true meaning of Christmas.", img:"", buy:"", price:""},
-  {cat:"Faith and Christmas", also:"Colouring Books", title:"50 Memory Verses to Colour and Remember", text:"Fifty Bible memory verses to colour, learn and keep close.", img:"", buy:"", price:"", note:"Coming soon"},
-  {cat:"Faith and Christmas", also:"Colouring Books", title:"50 Memory Verses to Colour and Remember: Teen Edition", text:"The memory verse colouring book, designed for older children and teens.", img:"", buy:"", price:"", note:"Coming soon"},
-  {cat:"Colouring Books", title:"Patch's Path to Calm and Confidence", text:"Colour along with Patch the hedgehog while learning calm, confident ways to handle big feelings.", img:"", buy:"", price:""},
-  {cat:"Printables and Games", also:"Faith and Christmas", title:"Dyslexia-Friendly Christmas Family Games Bundle", text:"Printable Christmas games and Letter to Santa pages, easy to read and fun for the whole family.", img:"", buy:"", price:""},
-  {cat:"Story Books", title:"Milo and the Starry Sand", text:"A soft, starry bedtime story about drawing, friendship and wonder.", img:"milo", read:"https://tansleytales.com/milo-and-the-starry-sand.html", buy:""},
+  /* ---- Story Books ---- */
   {cat:"Story Books", title:"Benny the Bunny's Bold Leap", text:"A little bunny finds his courage, one brave hop at a time.", img:"benny", read:"https://tansleytales.com/benny-the-bunnys-bold-leap.html", buy:""},
   {cat:"Story Books", title:"Benny and the Secret Meadow", text:"Benny and Lila discover a hidden meadow full of surprises.", img:"benny2", read:"https://tansleytales.com/benny-and-the-secret-meadow.html", buy:""},
+  {cat:"Story Books", title:"Milo and the Starry Sand", text:"A soft, starry bedtime story about drawing, friendship and wonder.", img:"milo", read:"https://tansleytales.com/milo-and-the-starry-sand.html", buy:""},
   {cat:"Story Books", title:"Nina's Tasty Trip: The Magic Spoon", text:"Nina and Grandma travel the world one delicious dish at a time.", img:"nina", read:"https://tansleytales.com/ninas-tasty-trip-the-magic-spoon.html", buy:""},
   {cat:"Story Books", title:"The Lion Who Was Afraid of the Dark", text:"Lumo the lion learns that the night is full of friends.", img:"lion", read:"https://tansleytales.com/the-lion-who-was-afraid-of-the-dark.html", buy:""},
   {cat:"Story Books", title:"Bramble and the First Frost", text:"Bramble gets ready for winter, with real nature facts to learn along the way.", img:"bramble1", read:"https://tansleytales.com/bramble-and-the-first-frost.html", buy:""},
@@ -244,10 +245,58 @@ const BOOKS = [
   {cat:"Story Books", title:"Eri and the Magic Book", text:"Two sisters find a secret door and learn they are stronger together.", img:"eri", read:"https://tansleytales.com/eri-and-the-magic-book.html", buy:""},
   {cat:"Story Books", title:"The Number Knights", text:"A maths adventure for children who think they don't like maths.", img:"knights", read:"https://tansleytales.com/the-number-knights-short-read.html", buy:""},
   {cat:"Story Books", title:"Max and Mia's Autumn Week", text:"A cosy week of autumn fun, from leaf piles to painting pumpkins.", img:"maxmia", read:"https://tansleytales.com/max-and-mias-autumn-week.html", buy:""},
-  {cat:"Story Books", title:"The Sounds of Autumn", text:"Listen closely and discover all the sounds autumn makes.", img:"soa", read:"https://tansleytales.com/the-sounds-of-autumn.html", buy:""}
+  {cat:"Story Books", also:"Seasonal and Holidays", title:"The Sounds of Autumn", text:"Listen closely and discover all the sounds autumn makes.", img:"soa", read:"https://tansleytales.com/the-sounds-of-autumn.html", buy:""},
+
+  /* ---- Handwriting and Pencil Control ---- */
+  {cat:"Handwriting and Pencil Control", title:"My First Tracing: Pencil Control", text:"Gentle tracing pages that build pencil control before letters begin.", buy:""},
+  {cat:"Handwriting and Pencil Control", title:"Handwriting and Tracing Book", text:"Trace letters, numbers and shapes, one calm page at a time.", buy:""},
+  {cat:"Handwriting and Pencil Control", title:"Tracing Activities", text:"Fun tracing practice for steady hands and growing confidence.", buy:""},
+  {cat:"Handwriting and Pencil Control", title:"Scissor Skills Activities", text:"Cut, snip and create while building fine motor skills.", buy:""},
+
+  /* ---- Bilingual Editions ---- */
+  {cat:"Bilingual Editions", title:"Spanish Pencil Control Book", text:"Pencil control practice with Spanish and English words.", buy:""},
+  {cat:"Bilingual Editions", title:"Spanish Handwriting Book", text:"Handwriting practice with Spanish and English words.", buy:""},
+  {cat:"Bilingual Editions", title:"Italian Pencil Control Book", text:"Pencil control practice with Italian and English words.", buy:""},
+  {cat:"Bilingual Editions", title:"Italian Handwriting Book", text:"Handwriting practice with Italian and English words.", buy:""},
+  {cat:"Bilingual Editions", title:"Japanese Pencil Control Book", text:"Pencil control practice with Japanese and English words.", buy:""},
+  {cat:"Bilingual Editions", title:"Japanese Handwriting Book", text:"Handwriting practice with Japanese and English words.", buy:""},
+
+  /* ---- Maths and Puzzles ---- */
+  {cat:"Maths and Puzzles", title:"Hop Into Math", text:"Bright, friendly maths practice that makes numbers fun.", buy:""},
+  {cat:"Maths and Puzzles", also:"Seasonal and Holidays", title:"90 Autumn Math Riddles", text:"Autumn-themed riddles that turn maths into a game.", buy:""},
+  {cat:"Maths and Puzzles", also:"Seasonal and Holidays", title:"Pumpkins, Leaves and Numbers Math Riddles", text:"Cosy autumn number riddles to solve together.", buy:""},
+  {cat:"Maths and Puzzles", title:"Word Search Fun 100", text:"One hundred word searches for quiet, happy puzzle time.", buy:""},
+  {cat:"Maths and Puzzles", title:"5 Minute Focus Exercises", text:"Short, calm activities that help busy minds settle and focus.", buy:""},
+
+  /* ---- Fun Facts and Learning ---- */
+  {cat:"Fun Facts and Learning", title:"Dinosaur Fun Facts", text:"Roar-some facts about dinosaurs, with activities to match.", buy:""},
+  {cat:"Fun Facts and Learning", title:"Oceans Fun Facts", text:"Dive into amazing facts about the ocean and its creatures.", buy:""},
+  {cat:"Fun Facts and Learning", also:"Seasonal and Holidays", title:"Autumn Fun Facts", text:"Discover why leaves change colour, and much more about autumn.", buy:""},
+  {cat:"Fun Facts and Learning", title:"Ocean and Earth Day Workbooks", text:"Learn to love and look after our planet and its oceans.", buy:""},
+
+  /* ---- Colouring Books ---- */
+  {cat:"Colouring Books", title:"Patch's Path to Calm and Confidence", text:"Colour along with Patch the hedgehog while learning calm, confident ways to handle big feelings.", buy:""},
+  {cat:"Colouring Books", title:"Cute Baby Monsters: Volume 1", text:"Friendly little monsters, ready for your colours.", buy:""},
+  {cat:"Colouring Books", title:"More Cute Baby Monsters: Volume 2", text:"Even more cuddly monsters to colour and love.", buy:""},
+
+  /* ---- Seasonal and Holidays ---- */
+  {cat:"Seasonal and Holidays", title:"Dyslexia-Friendly Christmas Family Games Bundle", text:"Printable Christmas games and Letter to Santa pages, easy to read and fun for the whole family.", buy:""},
+  {cat:"Seasonal and Holidays", title:"Christmas Wheels", text:"Festive spinning wheel activities to make and play.", buy:""},
+  {cat:"Seasonal and Holidays", title:"Valentine's Activity Book", text:"Kind, colourful activities all about friendship and love.", buy:""},
+  {cat:"Seasonal and Holidays", also:"Colouring Books", title:"Easter Colouring Book", text:"Spring and Easter pictures to colour.", buy:""},
+  {cat:"Seasonal and Holidays", also:"Handwriting and Pencil Control", title:"Easter Scissor Skills", text:"Easter-themed cutting practice for little hands.", buy:""},
+
+  /* ---- Faith Books ---- */
+  {cat:"Faith Books", also:"Seasonal and Holidays", title:"Ivy's Christmas Story", text:"A gentle Christmas colouring storybook about discovering the true meaning of Christmas.", buy:""},
+  {cat:"Faith Books", also:"Colouring Books", title:"50 Memory Verses to Colour and Remember", text:"Fifty Bible memory verses to colour, learn and keep close.", buy:"", note:"Coming soon"},
+  {cat:"Faith Books", also:"Colouring Books", title:"50 Memory Verses to Colour and Remember: Teen Edition", text:"The memory verse colouring book, designed for older children and teens.", buy:"", note:"Coming soon"},
+
+  /* ---- Planners and Trackers ---- */
+  {cat:"Planners and Trackers", title:"Homework Tracker", text:"A calm, simple way to keep homework on track, without the tears.", buy:""},
+  {cat:"Planners and Trackers", title:"Reading Journal and Tracker", text:"Record every book read and celebrate each one.", buy:""}
 ];
 
-const CATS = ["All books","Story Books","Colouring Books","Faith and Christmas","Printables and Games"];
+const CATS = ["All books","Story Books","Handwriting and Pencil Control","Bilingual Editions","Maths and Puzzles","Fun Facts and Learning","Colouring Books","Seasonal and Holidays","Faith Books","Planners and Trackers"];
 const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const grid = document.getElementById("grid");
 const filters = document.querySelector(".filters");
