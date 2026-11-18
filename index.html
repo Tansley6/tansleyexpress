@@ -232,7 +232,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem}
    To add or change a book, edit this list only.
    buy:    paste the Payhip (or Amazon) link here. Empty = shows "Coming soon".
    read:   link to read it free on Tansley Tales (optional).
-   img:    picture file in the img folder. Leave empty for a text cover.  */
+   img:    picture file name (640x480 .webp, same folder). Leave empty for a text cover.  */
 const BOOKS = [
   /* ---- Story Books ---- */
   {cat:"Story Books", title:"Benny the Bunny's Bold Leap", text:"A little bunny finds his courage, one brave hop at a time.", img:"benny", read:"https://tansleytales.com/benny-the-bunnys-bold-leap.html", buy:""},
@@ -248,29 +248,29 @@ const BOOKS = [
   {cat:"Story Books", also:"Seasonal and Holidays", title:"The Sounds of Autumn", text:"Listen closely and discover all the sounds autumn makes.", img:"soa", read:"https://tansleytales.com/the-sounds-of-autumn.html", buy:""},
 
   /* ---- Handwriting and Pencil Control ---- */
-  {cat:"Handwriting and Pencil Control", title:"My First Tracing: Pencil Control", text:"Gentle tracing pages that build pencil control before letters begin.", buy:""},
-  {cat:"Handwriting and Pencil Control", title:"Handwriting and Tracing Book", text:"Trace letters, numbers and shapes, one calm page at a time.", buy:""},
-  {cat:"Handwriting and Pencil Control", title:"Tracing Activities", text:"Fun tracing practice for steady hands and growing confidence.", buy:""},
+  {cat:"Handwriting and Pencil Control", title:"My First Tracing: Pencil Control", text:"Gentle tracing pages that build pencil control before letters begin.", img:"tracing1", buy:""},
+  {cat:"Handwriting and Pencil Control", title:"Handwriting and Tracing Book", text:"Trace letters, numbers and shapes, one calm page at a time.", img:"handwriting", buy:""},
+  {cat:"Handwriting and Pencil Control", title:"Tracing Activities", text:"Fun tracing practice for steady hands and growing confidence.", img:"tracing2", buy:""},
   {cat:"Handwriting and Pencil Control", title:"Scissor Skills Activities", text:"Cut, snip and create while building fine motor skills.", buy:""},
 
   /* ---- Bilingual Editions ---- */
-  {cat:"Bilingual Editions", title:"Spanish Pencil Control Book", text:"Pencil control practice with Spanish and English words.", buy:""},
-  {cat:"Bilingual Editions", title:"Spanish Handwriting Book", text:"Handwriting practice with Spanish and English words.", buy:""},
-  {cat:"Bilingual Editions", title:"Italian Pencil Control Book", text:"Pencil control practice with Italian and English words.", buy:""},
-  {cat:"Bilingual Editions", title:"Italian Handwriting Book", text:"Handwriting practice with Italian and English words.", buy:""},
-  {cat:"Bilingual Editions", title:"Japanese Pencil Control Book", text:"Pencil control practice with Japanese and English words.", buy:""},
-  {cat:"Bilingual Editions", title:"Japanese Handwriting Book", text:"Handwriting practice with Japanese and English words.", buy:""},
+  {cat:"Bilingual Editions", title:"Spanish Pencil Control Book", text:"Pencil control practice with Spanish and English words.", img:"spanishpencil", buy:""},
+  {cat:"Bilingual Editions", title:"Spanish Handwriting Book", text:"Handwriting practice with Spanish and English words.", img:"spanishhand", buy:""},
+  {cat:"Bilingual Editions", title:"Italian Pencil Control Book", text:"Pencil control practice with Italian and English words.", img:"italianpencil", buy:""},
+  {cat:"Bilingual Editions", title:"Italian Handwriting Book", text:"Handwriting practice with Italian and English words.", img:"italianhand", buy:""},
+  {cat:"Bilingual Editions", title:"Japanese Pencil Control Book", text:"Pencil control practice with Japanese and English words.", img:"japanesepencil", buy:""},
+  {cat:"Bilingual Editions", title:"Japanese Handwriting Book", text:"Handwriting practice with Japanese and English words.", img:"japanesehand", buy:""},
 
   /* ---- Maths and Puzzles ---- */
-  {cat:"Maths and Puzzles", title:"Hop Into Math", text:"Bright, friendly maths practice that makes numbers fun.", buy:""},
+  {cat:"Maths and Puzzles", title:"Hop Into Math", text:"Bright, friendly maths practice that makes numbers fun.", img:"hopmath", buy:""},
   {cat:"Maths and Puzzles", also:"Seasonal and Holidays", title:"90 Autumn Math Riddles", text:"Autumn-themed riddles that turn maths into a game.", buy:""},
-  {cat:"Maths and Puzzles", also:"Seasonal and Holidays", title:"Pumpkins, Leaves and Numbers Math Riddles", text:"Cosy autumn number riddles to solve together.", buy:""},
+  {cat:"Maths and Puzzles", also:"Seasonal and Holidays", title:"Pumpkins, Leaves and Numbers Math Riddles", text:"Cosy autumn number riddles to solve together.", img:"autumnriddles", buy:""},
   {cat:"Maths and Puzzles", title:"Word Search Fun 100", text:"One hundred word searches for quiet, happy puzzle time.", buy:""},
   {cat:"Maths and Puzzles", title:"5 Minute Focus Exercises", text:"Short, calm activities that help busy minds settle and focus.", buy:""},
 
   /* ---- Fun Facts and Learning ---- */
-  {cat:"Fun Facts and Learning", title:"Dinosaur Fun Facts", text:"Roar-some facts about dinosaurs, with activities to match.", buy:""},
-  {cat:"Fun Facts and Learning", title:"Oceans Fun Facts", text:"Dive into amazing facts about the ocean and its creatures.", buy:""},
+  {cat:"Fun Facts and Learning", title:"Dinosaur Fun Facts", text:"Roar-some facts about dinosaurs, with activities to match.", img:"dinosaur", buy:""},
+  {cat:"Fun Facts and Learning", title:"Oceans Fun Facts", text:"Dive into amazing facts about the ocean and its creatures.", img:"ocean", buy:""},
   {cat:"Fun Facts and Learning", also:"Seasonal and Holidays", title:"Autumn Fun Facts", text:"Discover why leaves change colour, and much more about autumn.", buy:""},
   {cat:"Fun Facts and Learning", title:"Ocean and Earth Day Workbooks", text:"Learn to love and look after our planet and its oceans.", buy:""},
 
@@ -281,10 +281,10 @@ const BOOKS = [
 
   /* ---- Seasonal and Holidays ---- */
   {cat:"Seasonal and Holidays", title:"Dyslexia-Friendly Christmas Family Games Bundle", text:"Printable Christmas games and Letter to Santa pages, easy to read and fun for the whole family.", buy:""},
-  {cat:"Seasonal and Holidays", title:"Christmas Wheels", text:"Festive spinning wheel activities to make and play.", buy:""},
-  {cat:"Seasonal and Holidays", title:"Valentine's Activity Book", text:"Kind, colourful activities all about friendship and love.", buy:""},
+  {cat:"Seasonal and Holidays", also:"Colouring Books", title:"Christmas Wheels", text:"A festive colouring adventure packed with Christmas vehicles.", img:"xmascol", buy:""},
+  {cat:"Seasonal and Holidays", title:"Valentine's Activity Book", text:"Kind, colourful activities all about friendship and love.", img:"valentine", buy:""},
   {cat:"Seasonal and Holidays", also:"Colouring Books", title:"Easter Colouring Book", text:"Spring and Easter pictures to colour.", buy:""},
-  {cat:"Seasonal and Holidays", also:"Handwriting and Pencil Control", title:"Easter Scissor Skills", text:"Easter-themed cutting practice for little hands.", buy:""},
+  {cat:"Seasonal and Holidays", also:"Handwriting and Pencil Control", title:"Easter Scissor Skills", text:"Easter-themed cutting practice for little hands.", img:"easterscissor", buy:""},
 
   /* ---- Faith Books ---- */
   {cat:"Faith Books", also:"Seasonal and Holidays", title:"Ivy's Christmas Story", text:"A gentle Christmas colouring storybook about discovering the true meaning of Christmas.", buy:""},
