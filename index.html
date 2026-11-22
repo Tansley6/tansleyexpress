@@ -368,12 +368,14 @@ nav{flex:0 0 auto}
 /* ===== THE BOOK LIST =====
    To add or change a book, edit this list only.
    buy:    paste the Tansley Express purchase link here. Empty = show paperback availability.
+   amazon: Amazon paperback link. Shows a "Buy on Amazon" button.
+   noNote: true = hide the "Paperback available on Amazon soon" note.
    read:   link to read it free on Tansley Tales (optional).
    img:    picture file name (640x480 .webp, same folder). Leave empty for a text cover.  */
 const BOOKS = [
   /* ---- Story Books ---- */
-  {cat:"Story Books", title:"Benny the Bunny's Bold Leap", text:"A little bunny finds his courage, one brave hop at a time.", img:"benny", read:"https://tansleytales.com/benny-the-bunnys-bold-leap.html", buy:""},
-  {cat:"Story Books", title:"Benny and the Secret Meadow", text:"Benny and Lila discover a hidden meadow full of surprises.", img:"benny2", read:"https://tansleytales.com/benny-and-the-secret-meadow.html", buy:""},
+  {cat:"Story Books", noNote:true, title:"Benny the Bunny's Bold Leap", text:"A little bunny finds his courage, one brave hop at a time.", img:"benny", read:"https://tansleytales.com/benny-the-bunnys-bold-leap.html", buy:""},
+  {cat:"Story Books", noNote:true, title:"Benny and the Secret Meadow", text:"Benny and Lila discover a hidden meadow full of surprises.", img:"benny2", read:"https://tansleytales.com/benny-and-the-secret-meadow.html", buy:""},
   {cat:"Story Books", title:"Milo and the Starry Sand", text:"A soft, starry bedtime story about drawing, friendship and wonder.", img:"milo", read:"https://tansleytales.com/milo-and-the-starry-sand.html", buy:""},
   {cat:"Story Books", title:"Nina's Tasty Trip: The Magic Spoon", text:"Nina and Grandma travel the world one delicious dish at a time.", img:"nina", read:"https://tansleytales.com/ninas-tasty-trip-the-magic-spoon.html", buy:""},
   {cat:"Story Books", title:"The Lion Who Was Afraid of the Dark", text:"Lumo the lion learns that the night is full of friends.", img:"lion", read:"https://tansleytales.com/the-lion-who-was-afraid-of-the-dark.html", buy:""},
@@ -382,43 +384,43 @@ const BOOKS = [
   {cat:"Story Books", title:"Eri and the Magic Book", text:"Two sisters find a secret door and learn they are stronger together.", img:"eri", read:"https://tansleytales.com/eri-and-the-magic-book.html", buy:""},
   {cat:"Story Books", title:"The Number Knights", text:"A maths adventure for children who think they don't like maths.", img:"knights", read:"https://tansleytales.com/the-number-knights-short-read.html", buy:""},
   {cat:"Story Books", title:"Max and Mia's Autumn Week", text:"A cosy week of autumn fun, from leaf piles to painting pumpkins.", img:"maxmia", read:"https://tansleytales.com/max-and-mias-autumn-week.html", buy:""},
-  {cat:"Story Books", also:"Seasonal and Holidays", title:"The Sounds of Autumn", text:"Listen closely and discover all the sounds autumn makes.", img:"soa", read:"https://tansleytales.com/the-sounds-of-autumn.html", buy:""},
+  {cat:"Story Books", also:"Seasonal and Holidays", noNote:true, title:"The Sounds of Autumn", text:"Listen closely and discover all the sounds autumn makes.", img:"soa", read:"https://tansleytales.com/the-sounds-of-autumn.html", buy:""},
 
   /* ---- Handwriting and Pencil Control ---- */
-  {cat:"Handwriting and Pencil Control", title:"My First Tracing: Pencil Control", text:"Gentle tracing pages that build pencil control before letters begin.", img:"tracing1", buy:""},
-  {cat:"Handwriting and Pencil Control", title:"Handwriting and Tracing Book", text:"Trace letters, numbers and shapes, one calm page at a time.", img:"handwriting", buy:""},
-  {cat:"Handwriting and Pencil Control", title:"Tracing Activities", text:"Fun tracing practice for steady hands and growing confidence.", img:"tracing2", buy:""},
+  {noNote:true, cat:"Handwriting and Pencil Control", title:"My First Tracing: Pencil Control", text:"Gentle tracing pages that build pencil control before letters begin.", img:"tracing1", buy:""},
+  {noNote:true, cat:"Handwriting and Pencil Control", title:"Handwriting and Tracing Book", text:"Trace letters, numbers and shapes, one calm page at a time.", img:"handwriting", buy:""},
+  {noNote:true, cat:"Handwriting and Pencil Control", title:"Tracing Activities", text:"Fun tracing practice for steady hands and growing confidence.", img:"tracing2", buy:""},
 
   /* ---- Bilingual Editions ---- */
-  {cat:"Bilingual Editions", title:"Spanish Pencil Control Book", text:"Pencil control practice with Spanish and English words.", img:"spanishpencil", buy:""},
-  {cat:"Bilingual Editions", title:"Spanish Handwriting Book", text:"Handwriting practice with Spanish and English words.", img:"spanishhand", buy:""},
-  {cat:"Bilingual Editions", title:"Italian Pencil Control Book", text:"Pencil control practice with Italian and English words.", img:"italianpencil", buy:""},
-  {cat:"Bilingual Editions", title:"Italian Handwriting Book", text:"Handwriting practice with Italian and English words.", img:"italianhand", buy:""},
-  {cat:"Bilingual Editions", title:"Japanese Pencil Control Book", text:"Pencil control practice with Japanese and English words.", img:"japanesepencil", buy:""},
-  {cat:"Bilingual Editions", title:"Japanese Handwriting Book", text:"Handwriting practice with Japanese and English words.", img:"japanesehand", buy:""},
+  {noNote:true, cat:"Bilingual Editions", title:"Spanish Pencil Control Book", text:"Pencil control practice with Spanish and English words.", img:"spanishpencil", buy:""},
+  {noNote:true, cat:"Bilingual Editions", title:"Spanish Handwriting Book", text:"Handwriting practice with Spanish and English words.", img:"spanishhand", buy:""},
+  {noNote:true, cat:"Bilingual Editions", title:"Italian Pencil Control Book", text:"Pencil control practice with Italian and English words.", img:"italianpencil", buy:""},
+  {noNote:true, cat:"Bilingual Editions", title:"Italian Handwriting Book", text:"Handwriting practice with Italian and English words.", img:"italianhand", buy:""},
+  {noNote:true, cat:"Bilingual Editions", title:"Japanese Pencil Control Book", text:"Pencil control practice with Japanese and English words.", img:"japanesepencil", buy:""},
+  {noNote:true, cat:"Bilingual Editions", title:"Japanese Handwriting Book", text:"Handwriting practice with Japanese and English words.", img:"japanesehand", buy:""},
 
   /* ---- Maths and Puzzles ---- */
-  {cat:"Maths and Puzzles", title:"Hop Into Math", text:"Bright, friendly maths practice that makes numbers fun.", img:"hopmath", buy:""},
-  {cat:"Maths and Puzzles", also:"Seasonal and Holidays", title:"90 Autumn Math Riddles", img:"autumn90", text:"Autumn-themed riddles that turn maths into a game.", buy:""},
-  {cat:"Maths and Puzzles", also:"Seasonal and Holidays", title:"Pumpkins, Leaves and Numbers Math Riddles", text:"Cosy autumn number riddles to solve together.", img:"autumnriddles", buy:""},
-  {cat:"Maths and Puzzles", title:"Word Search Fun 100", img:"wordsearch", text:"One hundred word searches for quiet, happy puzzle time.", buy:""},
+  {cat:"Maths and Puzzles", title:"Hop Into Math", text:"Bright, friendly maths practice that makes numbers fun.", img:"hopmath", buy:"", amazon:"https://www.amazon.com/dp/B0F285HH1P"},
+  {cat:"Maths and Puzzles", also:"Seasonal and Holidays", title:"90 Autumn Math Riddles", img:"autumn90", text:"Autumn-themed riddles that turn maths into a game.", buy:"", amazon:"https://www.amazon.com/dp/B0FVVKRN2V"},
+  {cat:"Maths and Puzzles", also:"Seasonal and Holidays", title:"Pumpkins, Leaves and Numbers Math Riddles", text:"Cosy autumn number riddles to solve together.", img:"autumnriddles", buy:"", amazon:"https://www.amazon.com/dp/B0FXFWWBC6"},
+  {cat:"Maths and Puzzles", title:"Word Search Fun 100", img:"wordsearch", text:"One hundred word searches for quiet, happy puzzle time.", buy:"", amazon:"https://www.amazon.com/dp/B0DFMJMTQ5"},
 
   /* ---- Fun Facts and Learning ---- */
-  {cat:"Fun Facts and Learning", title:"Dinosaur Fun Facts", text:"Roar-some facts about dinosaurs, with activities to match.", img:"dinosaur", buy:""},
-  {cat:"Fun Facts and Learning", title:"Oceans Fun Facts", text:"Dive into amazing facts about the ocean and its creatures.", img:"ocean", buy:""},
-  {cat:"Fun Facts and Learning", also:"Seasonal and Holidays", title:"Autumn Fun Facts", img:"autumnfacts", text:"Discover why leaves change colour, and much more about autumn.", buy:""},
+  {cat:"Fun Facts and Learning", title:"Dinosaur Fun Facts", text:"Roar-some facts about dinosaurs, with activities to match.", img:"dinosaur", buy:"", amazon:"https://www.amazon.com/dp/B0D45XCBK5"},
+  {cat:"Fun Facts and Learning", title:"Oceans Fun Facts", text:"Dive into amazing facts about the ocean and its creatures.", img:"ocean", buy:"", amazon:"https://www.amazon.com/dp/B0D43111ZB"},
+  {cat:"Fun Facts and Learning", also:"Seasonal and Holidays", title:"Autumn Activity Book", img:"autumnfacts", text:"Over 100 autumn puzzles, word searches, maths games and crosswords.", buy:"", amazon:"https://www.amazon.com/dp/B0DC6ZJJ37"},
 
   /* ---- Colouring Books ---- */
-  {cat:"Colouring Books", title:"Patch's Path to Calm and Confidence", text:"Colour along with Patch the hedgehog while learning calm, confident ways to handle big feelings.", buy:""},
+  {cat:"Colouring Books", title:"Patch's Path to Calm and Confidence", text:"Colour along with Patch the hedgehog while learning calm, confident ways to handle big feelings.", buy:"", amazon:"https://www.amazon.com/dp/B0G8F36PY5"},
   {cat:"Colouring Books", title:"Cute Baby Monsters: Volume 1", text:"Friendly little monsters, ready for your colours.", buy:""},
-  {cat:"Colouring Books", title:"More Cute Baby Monsters: Volume 2", text:"Even more cuddly monsters to colour and love.", buy:""},
+  {cat:"Colouring Books", title:"More Cute Baby Monsters: Volume 2", text:"Even more cuddly monsters to colour and love.", buy:"", amazon:"https://www.amazon.com/dp/B0FKTFMVK4"},
 
   /* ---- Seasonal and Holidays ---- */
   {cat:"Seasonal and Holidays", title:"Dyslexia-Friendly Christmas Family Games Bundle", text:"Printable Christmas games and Letter to Santa pages, easy to read and fun for the whole family.", buy:""},
-  {cat:"Seasonal and Holidays", also:"Colouring Books", title:"Christmas Wheels", text:"A festive colouring adventure packed with Christmas vehicles.", img:"xmascol", buy:""},
-  {cat:"Seasonal and Holidays", title:"Valentine's Activity Book", text:"Kind, colourful activities all about friendship and love.", img:"valentine", buy:""},
+  {cat:"Seasonal and Holidays", also:"Colouring Books", title:"Christmas Wheels", text:"A festive colouring adventure packed with Christmas vehicles.", img:"xmascol", buy:"", amazon:"https://www.amazon.com/dp/B0G5D796F7"},
+  {cat:"Seasonal and Holidays", title:"Valentine's Activity Book", text:"Kind, colourful activities all about friendship and love.", img:"valentine", buy:"", amazon:"https://www.amazon.com/dp/B0DVGVGTNR"},
   {cat:"Seasonal and Holidays", also:"Colouring Books", title:"Easter Colouring Book", text:"Spring and Easter pictures to colour.", buy:""},
-  {cat:"Seasonal and Holidays", also:"Handwriting and Pencil Control", title:"Easter Scissor Skills", text:"Easter-themed cutting practice for little hands.", img:"easterscissor", buy:""},
+  {noNote:true, cat:"Seasonal and Holidays", also:"Handwriting and Pencil Control", title:"Easter Scissor Skills", text:"Easter-themed cutting practice for little hands.", img:"easterscissor", buy:""},
 
   /* ---- Faith Books ---- */
   {cat:"Faith Books", also:"Seasonal and Holidays", title:"Ivy's Christmas Story", text:"A gentle Christmas colouring storybook about discovering the true meaning of Christmas.", buy:""},
@@ -426,13 +428,13 @@ const BOOKS = [
   {cat:"Faith Books", also:"Colouring Books", title:"50 Memory Verses to Colour and Remember: Teen Edition", text:"The memory verse colouring book, designed for older children and teens.", buy:"", note:"Coming soon"},
 
   /* ---- Planners and Trackers ---- */
-  {cat:"Planners and Trackers", title:"Homework Tracker", img:"homework", text:"A calm, simple way to keep homework on track, without the tears.", buy:""},
-  {cat:"Planners and Trackers", title:"Reading Journal and Tracker", img:"readingjournal", text:"Record every book read and celebrate each one.", buy:""}
+  {cat:"Planners and Trackers", title:"Homework Tracker", img:"homework", text:"A calm, simple way to keep homework on track, without the tears.", buy:"", amazon:"https://www.amazon.com/dp/B0CXWSXRXN"},
+  {cat:"Planners and Trackers", title:"Reading Journal and Tracker", img:"readingjournal", text:"Record every book read and celebrate each one.", buy:"", amazon:"https://www.amazon.com/dp/B0DFVHLQJR"}
 ];
 
 const CATS = ["All books","Story Books","Handwriting and Pencil Control","Bilingual Editions","Maths and Puzzles","Fun Facts and Learning","Colouring Books","Seasonal and Holidays","Faith Books","Planners and Trackers"];
-// Titles confirmed as having a paperback listing on Amazon. Add titles here as more editions appear.
-const AMAZON_AVAILABLE = new Set(["90 Autumn Math Riddles","Pumpkins, Leaves and Numbers Math Riddles","Dinosaur Fun Facts"]);
+// Books with an amazon link count as available on Amazon.
+const AMAZON_AVAILABLE = new Set(BOOKS.filter(b => b.amazon).map(b => b.title));
 const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const grid = document.getElementById("grid");
 const filters = document.querySelector(".filters");
@@ -447,9 +449,10 @@ function card(b){
   const buy = b.buy
     ? `<a class="btn small" href="${esc(b.buy)}">${localPrice ? "Buy · " + esc(localPrice) : "Buy this book"}</a>`
     : "";
-  const availability = `<span class="availability${AMAZON_AVAILABLE.has(b.title) ? " available" : " soon"}">${amazonStatus}</span>`;
+  const amazon = b.amazon ? `<a class="btn small" href="${esc(b.amazon)}" target="_blank" rel="noopener">Buy on Amazon</a>` : "";
+  const availability = (b.amazon || b.noNote) ? "" : `<span class="availability soon">${amazonStatus}</span>`;
   const read = b.read ? `<a class="link" href="${esc(b.read)}">Read free</a>` : "";
-  return `<article class="card">${pic}<div class="body"><span class="tag">${esc(b.cat)}</span><h3>${esc(b.title)}</h3><p>${esc(b.text)}</p>${price}<div class="actions">${buy}${availability}${read}</div></div></article>`;
+  return `<article class="card">${pic}<div class="body"><span class="tag">${esc(b.cat)}</span><h3>${esc(b.title)}</h3><p>${esc(b.text)}</p>${price}<div class="actions">${buy}${amazon}${availability}${read}</div></div></article>`;
 }
 function show(cat){
   grid.innerHTML = BOOKS.filter(b => cat === "All books" || b.cat === cat || b.also === cat).map(card).join("");
