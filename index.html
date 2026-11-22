@@ -17,100 +17,197 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Lexend:wght@300;400;600&display=swap">
 <style>
 :root{
-  --navy:#0e2a47; --sage:#a7b89a; --sage-dark:#5f7352; --peach:#f3c9b2; --lavender:#d7c7e6; --cream:#f7f2e9;
-  --paper:#fffdf8; --ink:#0e2a47; --muted:#4c5d70; --line:#e7dfd0;
-  --display:"Fredoka","Trebuchet MS",sans-serif; --body:"Lexend","Verdana",sans-serif;
+  --navy:#0E2A47;--sage:#A7B89A;--sage-deep:#526849;--peach:#F3C9B2;--lavender:#D7C7E6;--cream:#F7F2E9;
+  --paper:#FFFCF6;--ink:#0E2A47;--line:#D8D0C2;--display:"Fredoka","Trebuchet MS",sans-serif;--body:"Lexend","Verdana",sans-serif;
 }
 *{box-sizing:border-box}
-body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--body);font-size:1.1rem;line-height:1.75;letter-spacing:.01em}
+html{scroll-behavior:smooth;scroll-padding-top:6.5rem}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--body);font-size:18px;line-height:1.65;letter-spacing:0;overflow-x:hidden}
 img{max-width:100%;display:block}
-a{color:var(--navy)}
-a:focus-visible,button:focus-visible{outline:3px solid var(--sage-dark);outline-offset:3px}
-.wrap{max-width:1100px;margin:0 auto;padding:0 1.25rem}
-.skip{position:absolute;left:-999px}.skip:focus{left:1rem;top:1rem;background:#fff;padding:.5rem 1rem;z-index:10}
-
-/* Header */
-header{background:var(--paper);color:var(--navy);position:sticky;top:0;z-index:5;border-bottom:1px solid var(--line)}
-.bar{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.7rem 1.25rem;flex-wrap:wrap}
-.brand{display:flex;align-items:center;gap:.7rem;color:var(--navy);text-decoration:none}
-.brand img{width:54px;height:auto}
-.brand span{font-family:var(--display);font-size:1.5rem;font-weight:600}
-nav ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.3rem 1.2rem}
-nav a{color:var(--navy);text-decoration:none;font-size:1rem;padding:.3rem 0;border-bottom:2px solid transparent}
-nav a:hover{border-bottom-color:var(--sage)}
-
-/* Hero */
-.hero{background:linear-gradient(160deg,var(--cream) 0,#fbf3ec 55%,#f4ecf7 100%);color:var(--navy);padding:4rem 0 4.5rem}
-.hero .wrap{display:grid;grid-template-columns:1.3fr 1fr;gap:2.5rem;align-items:center}
-.hero h1{font-family:var(--display);font-size:clamp(2rem,4.5vw,3.1rem);line-height:1.2;margin:0 0 1rem;font-weight:600}
-.hero p{font-size:1.2rem;color:var(--muted);max-width:34rem;margin:0 0 1.6rem}
-.hero img{max-width:340px;margin:0 auto}
-.btn{display:inline-block;background:var(--navy);color:var(--cream);font-weight:600;text-decoration:none;padding:.8rem 1.5rem;border-radius:999px;border:0;font-family:var(--body);font-size:1.05rem;cursor:pointer}
-.btn:hover{background:#1d4369}
-.btn.ghost{background:transparent;color:var(--navy);border:2px solid var(--sage);margin-left:.6rem}
-.btn.small{padding:.55rem 1.1rem;font-size:.98rem}
-.btn.off{background:var(--cream);color:var(--muted);cursor:default}
-
-/* Promise strip */
-.promise{background:var(--paper);border-bottom:1px solid var(--line)}
-.promise ul{list-style:none;margin:0 auto;padding:1.4rem 1.25rem;display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
-.promise li{display:flex;gap:.6rem;align-items:flex-start;font-size:1rem}
+a{color:var(--navy);text-underline-offset:.18em}
+a:focus-visible,button:focus-visible{outline:3px solid var(--sage-deep);outline-offset:3px}
+.wrap{width:min(1120px,100% - 40px);margin:0 auto}
+.skip{position:absolute;left:-999px;top:0}.skip:focus{left:1rem;top:1rem;background:var(--paper);padding:.75rem 1rem;z-index:20}
+header{position:sticky;top:0;z-index:10;background:var(--paper);border-bottom:1px solid var(--line)}
+.bar{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;align-items:center;gap:.7rem;color:var(--navy);text-decoration:none;min-width:0}
+.brand img{width:46px;height:46px;object-fit:contain}
+.brand span{font-family:var(--display);font-size:1.5rem;line-height:1.15;font-weight:600;letter-spacing:.01em}
+.menu-toggle{display:none;min-height:48px;padding:.55rem 1rem;background:var(--navy);color:var(--cream);border:1px solid var(--navy);border-radius:8px;font:600 18px var(--body);cursor:pointer}
+nav ul{list-style:none;margin:0;padding:0;display:flex;align-items:center;gap:.25rem 1.2rem}
+nav a{display:flex;align-items:center;min-height:48px;padding:.45rem 0;color:var(--navy);text-decoration:none;font-size:18px;font-weight:600;border-bottom:2px solid transparent}
+nav a:hover{border-bottom-color:var(--sage-deep)}
+.hero{background:var(--cream);padding:clamp(1.75rem,5vw,3.5rem) 0 2.8rem;border-bottom:1px solid var(--line)}
+.hero-layout{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(320px,.95fr);gap:clamp(1.5rem,5vw,4rem);align-items:center}
+.hero-copy{max-width:38rem}
+.hero-portrait{position:relative;width:100%;max-width:480px;margin:0 auto;overflow:hidden;background:var(--paper);border:1px solid var(--line);border-radius:12px;box-shadow:0 14px 32px rgba(14,42,71,.12)}
+.hero-portrait img{width:100%;height:auto}
+.hero-quote{position:absolute;left:5%;bottom:8%;width:33%;margin:0;padding:.85rem .75rem;background:rgba(247,242,233,.96);border-left:4px solid var(--peach);color:var(--navy);font:600 clamp(18px,2vw,25px)/1.25 var(--display);text-align:left}
+.eyebrow{font-size:18px;font-weight:600;color:var(--sage-deep);margin:0 0 .75rem;letter-spacing:.04em}
+h1,h2,h3{color:var(--navy)}
+.hero h1{font:600 clamp(2.2rem,6vw,3.55rem)/1.13 var(--display);letter-spacing:.005em;margin:0 0 1rem;max-width:18ch}
+.hero p{font-size:20px;line-height:1.6;max-width:42rem;margin:0 0 1.35rem}
+.hero-actions{display:flex;flex-wrap:wrap;gap:.75rem}
+.btn{display:inline-flex;justify-content:center;align-items:center;min-height:50px;padding:.7rem 1.15rem;border:2px solid var(--navy);border-radius:8px;background:var(--navy);color:var(--cream);font:600 18px/1.25 var(--body);text-align:center;text-decoration:none;cursor:pointer}
+.btn:hover{background:#193d5f;color:var(--cream)}
+.btn.secondary{background:transparent;color:var(--navy)}.btn.secondary:hover{background:#ece5d9}
+.btn.quiet{background:#E8E2D8;border-color:#E8E2D8;color:var(--navy);cursor:default}
+section{padding:3rem 0}
+h2{font:600 clamp(1.8rem,4vw,2.35rem)/1.2 var(--display);letter-spacing:.005em;margin:0 0 .55rem}
+h3{font:600 1.2rem/1.3 var(--display);margin:.25rem 0 .4rem}
+.lead{max-width:48rem;margin:0 0 1.5rem;color:var(--ink);font-size:18px}
+.start-section{padding:1.8rem 0 2.25rem}
+.start-top{display:flex;justify-content:space-between;align-items:end;gap:1rem;margin-bottom:1rem}
+.start-top p{max-width:35rem;margin:0;font-size:18px}
+.start-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem}
+.empty-start{border-left:4px solid var(--sage-deep);padding:.3rem 0 .3rem 1rem;margin:.5rem 0 0;font-size:18px}
+.full-shelf[hidden]{display:none}
+.shelf-opening{padding-bottom:.7rem}
+.section-rule{border-top:1px solid var(--line)}
+.promise{background:var(--paper);border-block:1px solid var(--line)}
+.promise ul{list-style:none;margin:0 auto;padding:1.25rem 0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem}
+.promise li{font-size:18px;line-height:1.5;padding-left:.85rem;border-left:3px solid var(--sage)}
 .promise b{display:block;font-weight:600}
-.dot{flex:0 0 2.2rem;height:2.2rem;border-radius:50%;background:var(--peach);color:var(--navy);display:grid;place-items:center;font-size:1.1rem}
-
-/* Sections */
-section{padding:3.5rem 0}
-h2{font-family:var(--display);font-weight:600;font-size:2rem;margin:0 0 .4rem;color:var(--navy)}
-.lead{color:var(--muted);margin:0 0 1.8rem;max-width:44rem}
-.cats{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
-.cat{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:1.4rem;text-decoration:none;color:var(--ink);transition:transform .15s}
-.cat:hover{transform:translateY(-3px)}
-.cat .ico{font-size:2rem}
-.cat h3{font-family:var(--display);font-weight:600;margin:.4rem 0 .2rem;font-size:1.3rem;color:var(--navy)}
-.cat p{margin:0;font-size:.98rem;color:var(--muted)}
-
-/* Filter + grid */
-.filters{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:1.6rem}
-.filters button{font-family:var(--body);font-size:1rem;background:var(--paper);border:2px solid var(--line);color:var(--ink);padding:.45rem 1.1rem;border-radius:999px;cursor:pointer}
-.filters button[aria-pressed="true"]{background:var(--navy);border-color:var(--navy);color:var(--cream)}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1.4rem}
-.card{background:var(--paper);border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column}
-.card .pic{aspect-ratio:4/3;background:linear-gradient(150deg,var(--lavender),var(--peach));overflow:hidden}
-.card .pic img{width:100%;height:100%;object-fit:cover}
-.card .pic.text{display:grid;place-items:center;text-align:center;padding:1rem;font-family:var(--display);font-size:1.35rem;color:var(--navy);font-weight:600}
-.card .body{padding:1.1rem 1.2rem 1.3rem;display:flex;flex-direction:column;gap:.5rem;flex:1}
-.tag{align-self:flex-start;font-size:.85rem;background:#e9efe4;color:var(--sage-dark);padding:.1rem .7rem;border-radius:999px}
-.card h3{font-family:var(--display);font-weight:600;font-size:1.25rem;line-height:1.3;margin:0;color:var(--navy)}
-.card p{margin:0;font-size:1rem;color:var(--muted)}
-.card .actions{margin-top:auto;padding-top:.6rem;display:flex;flex-wrap:wrap;gap:.5rem;align-items:center}
-.card .actions a.link{font-size:.98rem}
-
-/* Tales band */
-.tales{background:var(--lavender);color:var(--navy)}
+.cats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.85rem;margin:1.25rem 0 2rem}
+.cat{position:relative;display:block;min-height:100%;background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:1rem 1.1rem;text-decoration:none;color:var(--ink)}
+.cat:before{content:"";display:block;width:2.5rem;border-top:3px solid var(--sage-deep);margin-bottom:.7rem}
+.cat:nth-child(3n+2):before{border-color:#A87B61}.cat:nth-child(3n):before{border-color:#79678D}
+.cat h3{font-size:20px;margin:.1rem 0 .35rem}.cat p{font-size:18px;line-height:1.5;margin:0}
+.filters{display:flex;flex-wrap:nowrap;gap:.5rem;margin:0 0 1.35rem;overflow-x:auto;overscroll-behavior-inline:contain;padding:.25rem .15rem .5rem;scrollbar-color:var(--sage) transparent}
+.filters button{flex:0 0 auto;min-height:48px;padding:.55rem .9rem;border-radius:8px;background:var(--paper);border:1px solid var(--navy);color:var(--navy);font:600 18px var(--body);white-space:nowrap;cursor:pointer}
+.filters button[aria-pressed="true"]{background:var(--navy);color:var(--cream)}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1.15rem}
+.card{min-width:0;background:var(--paper);border:1px solid var(--line);border-radius:8px;overflow:hidden;display:flex;flex-direction:column}
+.card .pic{aspect-ratio:3/4;background:var(--cream);padding:.65rem;display:grid;place-items:center;border-bottom:1px solid var(--line)}
+.card .pic img{width:100%;height:100%;object-fit:contain}
+.card .pic.text{font:600 21px/1.35 var(--display);text-align:center;color:var(--navy);padding:1rem}
+.card .body{padding:1rem;display:flex;flex-direction:column;gap:.55rem;flex:1}
+.tag{align-self:flex-start;font-size:18px;line-height:1.35;color:var(--sage-deep);font-weight:600}
+.card h3{font-size:20px;line-height:1.3;margin:0}
+.card p{font-size:18px;line-height:1.55;margin:0;color:var(--ink)}
+.card .actions{margin-top:auto;padding-top:.8rem;display:flex;flex-wrap:wrap;gap:.6rem;align-items:center}
+.card .actions a.link{display:inline-flex;align-items:center;min-height:48px;font-size:18px;font-weight:600}
+.card .actions .btn{width:100%;font-size:18px}
+.price{font-size:20px!important;font-weight:600!important;color:var(--navy)!important;margin:.1rem 0!important}
+.availability{display:block;width:100%;min-height:48px;padding:.7rem .8rem;border-radius:8px;background:#E7ECDD;color:var(--navy);font-size:18px;font-weight:600;line-height:1.35}
+.availability.available{border-left:4px solid var(--sage-deep)}.availability.soon{background:#F1EDE5;border-left:4px solid #B8AA92;color:#394D60}
+.tales{background:#EEE8F3;border-block:1px solid #CBBADB}
 .tales .wrap{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center}
-.tales h2{color:var(--navy)}
-.covers{display:grid;grid-template-columns:repeat(3,1fr);gap:.6rem}
-.covers img{border-radius:10px;aspect-ratio:4/3;object-fit:cover}
-
-/* About */
-.about .wrap{display:grid;grid-template-columns:1fr 2fr;gap:2.5rem;align-items:start}
-.about img{max-width:260px}
-.about p{max-width:42rem}
-
-/* Contact / footer */
-.contact{background:var(--paper);border-top:1px solid var(--line)}
-footer{background:var(--navy);color:var(--peach);padding:2rem 0;font-size:.95rem}
-footer a{color:var(--cream)}
-footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem}
-
-@media (max-width:860px){
-  .hero .wrap,.tales .wrap,.about .wrap{grid-template-columns:1fr}
-  .hero img{max-width:220px}
-  .promise ul{grid-template-columns:1fr 1fr}.cats{grid-template-columns:1fr 1fr}
-  .btn.ghost{margin:.7rem 0 0}
+.tales p{margin:.5rem 0 1.1rem;font-size:18px}
+.covers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.65rem}
+.covers img{width:100%;height:auto;aspect-ratio:3/4;object-fit:contain;background:var(--cream);border:1px solid var(--line);border-radius:4px;padding:.3rem}
+.apps{background:var(--paper);border-block:1px solid var(--line)}
+.app-card{display:grid;grid-template-columns:140px 1fr auto;align-items:center;gap:1.5rem;background:var(--cream);border:1px solid var(--line);border-radius:10px;padding:1.25rem;max-width:850px}
+.app-mark{width:120px;height:120px;display:grid;place-items:center;background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:.7rem}
+.app-mark img{width:100%;height:100%;object-fit:contain}
+.app-card h3{font-size:1.45rem;margin:0 0 .4rem}.app-card p{font-size:18px;margin:0;max-width:38rem}
+.about .wrap{display:block;max-width:820px}
+.about h2{margin-bottom:1rem}.about h3{font-family:var(--body);font-size:20px;margin:0 0 .7rem}
+.about p{font-size:18px;line-height:1.7;margin:0 0 1rem;max-width:46rem}
+.signature{padding-top:.3rem}.signature b{display:block}.signature span{display:block}
+.contact{background:var(--paper);border-top:1px solid var(--line)}.contact .lead{margin-bottom:1.2rem}
+footer{background:var(--navy);color:var(--cream);padding:1.6rem 0}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.75rem 1.5rem}
+footer,footer a{font-size:18px;line-height:1.5;color:var(--cream)}
+@media(max-width:900px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}.start-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.promise ul{grid-template-columns:repeat(2,minmax(0,1fr))}.tales .wrap{grid-template-columns:1fr}.hero-layout{grid-template-columns:1fr}.hero-portrait{order:-1;max-width:440px}}
+@media(max-width:700px){
+  .wrap{width:min(100% - 32px,560px)}.bar{min-height:68px;position:relative}.brand img{width:40px;height:40px}.brand span{font-size:1.3rem}
+  .menu-toggle{display:inline-flex;align-items:center;justify-content:center}
+  nav{display:none;position:absolute;left:0;right:0;top:100%;background:var(--paper);border-bottom:1px solid var(--line);padding:.5rem 1rem 1rem;box-shadow:0 10px 16px rgba(14,42,71,.08)}
+  nav.open{display:block}nav ul{display:grid;grid-template-columns:1fr;gap:.15rem}nav a{min-height:52px;padding:.6rem .7rem;border-bottom:1px solid var(--line)}
+  .hero{padding:1rem 0 1.4rem}.hero-layout{grid-template-columns:1fr;gap:1.1rem}.hero-copy{max-width:none}.hero h1{font-size:2.15rem;max-width:18ch;margin-bottom:.65rem}.hero p{font-size:18px;line-height:1.55;margin-bottom:.85rem}.hero-actions{display:grid;grid-template-columns:1fr 1fr;gap:.55rem}.hero-actions .btn{width:100%;min-height:50px;padding:.55rem .45rem;font-size:18px}.hero-actions .btn:last-child{grid-column:1/-1}.book-note{margin:.6rem 0 0!important}.hero-art{max-width:340px;padding:.75rem .85rem .65rem;border-radius:38% 38% 10px 10px}.hero-art-label{font-size:18px;margin:.45rem 0 0}.hero:after{width:9rem;height:9rem;right:-4.5rem;top:-3rem}.brand-tagline{font-size:18px}.shop-banner{display:block;padding:1rem}.shop-banner p{margin-bottom:.75rem}.shop-banner .btn{width:100%}
+  section{padding:2.4rem 0}.start-section{padding:1.45rem 0 1.8rem}.start-top{display:block}.start-top p{margin-top:.4rem}.start-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:.75rem}.start-grid .card .body{padding:.8rem}.start-grid .card .pic{padding:.4rem}.start-grid .tag{font-size:18px}.start-grid .card h3{font-size:18px}.start-grid .card p{font-size:18px}.start-grid .actions{gap:.35rem}
+  .start-grid .card .btn{min-height:48px;padding:.55rem .55rem;font-size:18px}
+  .promise ul{gap:.8rem;padding:1rem 0}.promise li{font-size:18px;padding-left:.65rem}.cats{grid-template-columns:repeat(2,minmax(0,1fr));gap:.65rem}.cat{padding:.85rem}.cat h3{font-size:18px}.cat p{font-size:18px}
+  .filters{margin-right:-.5rem;margin-left:-.5rem;padding-inline:.5rem}.filters button{min-height:48px}
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:.75rem}.card .pic{padding:.4rem}.card .body{padding:.8rem;gap:.45rem}.tag{font-size:18px}.card h3{font-size:18px}.card p{font-size:18px;line-height:1.5}.card .actions .btn{min-height:48px;padding:.55rem .5rem}
+  .tales .wrap{gap:1.3rem}.covers{grid-template-columns:repeat(3,minmax(0,1fr));gap:.4rem}.app-card{grid-template-columns:72px 1fr;gap:.9rem;padding:.9rem}.app-mark{width:68px;height:68px;padding:.35rem}.app-card h3{font-size:20px}.app-card p{font-size:18px}.app-card>.btn{grid-column:1/-1;width:100%}
+  .about .wrap{grid-template-columns:1fr;gap:1.25rem}.about-photo{width:min(100%,330px);margin:0 auto}.about h2{margin:0}.mission-card{padding:1rem}.mission-card p{font-size:18px}.contact .btn{width:100%}.contact .lead{max-width:34ch;text-wrap:pretty}footer .wrap{display:block}footer .wrap span{display:block;margin:.35rem 0}
 }
-@media (max-width:520px){.promise ul,.cats{grid-template-columns:1fr}}
-@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+
+/* Tansley Express storybook styling */
+.brand{gap:.75rem;flex:0 1 auto;max-width:48%}
+.brand img{flex:0 0 auto;width:52px;height:52px;object-fit:contain}
+.brand-copy{display:flex;flex-direction:column;align-items:flex-start;gap:.12rem;min-width:0}
+.brand-name{display:block;font:600 24px/1.1 var(--display)!important;white-space:nowrap}
+.brand-tagline{display:block;font:400 18px/1.25 var(--body)!important;color:#39536B;white-space:normal}
+nav{flex:0 0 auto}
+.hero{position:relative;overflow:hidden;padding:2rem 0 2.8rem;border-top:2px solid #D8D0C2;border-bottom:2px solid #D8D0C2;background:var(--cream)}
+.hero:before{content:"";position:absolute;inset:12px 18px;border:1px dashed rgba(82,104,73,.34);border-radius:22px;pointer-events:none}
+.hero:after{content:"✦";position:absolute;right:5%;top:1.1rem;color:#C79A4B;font-size:25px;line-height:1}
+.hero-layout{position:relative;z-index:1;grid-template-columns:minmax(0,1.05fr) minmax(300px,.95fr);gap:clamp(1.5rem,4vw,3.5rem);align-items:center}
+.hero-copy{max-width:44rem;padding:1.25rem 0 1.25rem 1rem}
+.hero .eyebrow{display:inline-block;margin:0 0 .75rem;padding:.35rem .8rem;border:1px dashed var(--sage-deep);border-radius:999px;background:#E7ECDD;color:var(--navy);letter-spacing:.015em}
+.hero h1{font-size:clamp(2.35rem,5.2vw,3.65rem);max-width:17ch;margin:0 0 .8rem}
+.hero-art{position:relative;width:100%;max-width:470px;margin:0 auto;padding:1.3rem 1.3rem 1rem;background:#E8EEDF;border:2px solid var(--sage-deep);border-radius:38% 38% 22px 22px;box-shadow:0 7px 0 rgba(82,104,73,.14)}
+.hero-art:before{content:"";position:absolute;inset:9px;border:1px solid rgba(82,104,73,.42);border-radius:38% 38% 15px 15px;pointer-events:none}
+.hero-books{position:relative;z-index:1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.8rem;align-items:end}
+.hero-books figure{margin:0;padding:.35rem;background:var(--cream);border:1px solid #C9BDA9;border-radius:5px;box-shadow:2px 4px 0 rgba(14,42,71,.12)}
+.hero-books figure:nth-child(2){transform:translateY(-.45rem)}
+.hero-books img{width:100%;aspect-ratio:3/4;object-fit:contain;background:var(--cream)}
+.hero-art-label{position:relative;z-index:1;margin:.8rem 0 0!important;padding-top:.65rem;border-top:1px dashed rgba(82,104,73,.5);font-size:18px!important;font-weight:600;text-align:center}
+.cloud-doodle{position:absolute;z-index:2;top:-1.3rem;right:8%;width:84px;height:auto;overflow:visible;fill:var(--paper);stroke:var(--sage-deep);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.cloud-doodle .cloud-star{fill:var(--peach);stroke:var(--navy);stroke-width:1.2}
+.hero-actions .btn{border-radius:14px;box-shadow:0 3px 0 rgba(14,42,71,.12)}
+.hero-actions .btn.secondary{border-style:dashed}
+.book-note{margin:.85rem 0 0!important;padding:.55rem .85rem;border-left:4px solid var(--peach);background:rgba(255,252,246,.72);border-radius:0 10px 10px 0;font-size:18px!important}
+.start-section{background:var(--paper);border-bottom:2px dashed #D8D0C2}
+.start-top{align-items:center}
+.start-top h2:after,.tales h2:after,.apps h2:after,.about h2:after,.contact h2:after,#categories h2:after{content:"✦";display:inline-block;margin-left:.55rem;color:#C79A4B;font:500 20px/1 var(--body);vertical-align:middle}
+.shop-banner{border:2px solid #D5DDCC;border-radius:15px 15px 15px 4px;background:#E9EFE4;box-shadow:3px 4px 0 rgba(82,104,73,.1)}
+.promise{border-top:0;border-bottom:2px solid var(--line)}
+.promise li{padding:.45rem .65rem .45rem 1rem;background:var(--cream);border:1px solid #DDD5C9;border-left:4px solid var(--sage);border-radius:5px 14px 14px 14px}
+.promise li:before{content:"✦";display:block;width:auto;border:0;margin:0 0 .15rem;color:#C79A4B;font-size:18px}
+.cats{grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
+.cat{min-height:100%;padding:.85rem .9rem 1rem;border:2px solid #D8D0C2;border-radius:14px 14px 14px 4px;box-shadow:3px 4px 0 rgba(14,42,71,.08);overflow:hidden}
+.cat:nth-child(4n+1){background:#FFFCF6}.cat:nth-child(4n+2){background:#F2EDF7}.cat:nth-child(4n+3){background:#EDF1E9}.cat:nth-child(4n){background:#FBEEE7}
+.cat:before{display:none}
+.cat:after{content:"✧";position:absolute;right:.8rem;top:.7rem;color:#C79A4B;font-size:22px;line-height:1}
+.cat-covers{height:92px;display:flex;align-items:flex-end;gap:.4rem;margin:0 0 .8rem;padding:.4rem .1rem .55rem;border-bottom:2px solid #A7B89A}
+.cat-covers img{width:48px;height:64px;object-fit:contain;background:var(--cream);border:1px solid #D8D0C2;border-radius:3px;box-shadow:1px 2px 0 rgba(14,42,71,.12)}
+.cat-covers img:nth-child(2){height:72px}
+.cat-covers svg{width:67px;height:72px;flex:0 0 auto;fill:var(--paper);stroke:var(--navy);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.cat-covers svg .faith-star{fill:var(--peach);stroke:var(--navy);stroke-width:1.2}
+.cat-covers.faith-art{align-items:center}
+.cat h3{padding-right:1.1rem}
+.card{border:2px solid #D8D0C2;border-radius:13px 13px 13px 4px;box-shadow:3px 4px 0 rgba(14,42,71,.08)}
+.card .pic{border-bottom:2px solid #E3D9C8}
+.card .pic img{border-radius:3px}
+.filters button{border-radius:999px;border-width:2px}
+.tales{background:#F1EBF5;border-block:2px solid #D7C7E6;position:relative}
+.covers img{border-radius:8px;border-width:2px;box-shadow:2px 3px 0 rgba(14,42,71,.1)}
+.app-card{border:2px solid #D8D0C2;border-radius:16px 16px 16px 5px;box-shadow:3px 4px 0 rgba(14,42,71,.08)}
+.app-mark{border:2px solid #D8D0C2;border-radius:12px}
+.about{background:#F5F0E6;border-block:2px solid var(--line)}
+.about .wrap{display:grid;grid-template-columns:minmax(245px,.72fr) minmax(0,1.28fr);gap:clamp(1.5rem,4vw,3rem);align-items:start;max-width:1050px}
+.about-photo{width:100%;max-width:380px;margin:0;padding:.5rem;background:#E8EEDF;border:2px solid var(--sage-deep);border-radius:46% 46% 18px 18px;box-shadow:4px 5px 0 rgba(82,104,73,.13)}
+.about-photo img{width:100%;height:auto;border:1px solid rgba(82,104,73,.4);border-radius:44% 44% 12px 12px}
+.mission-card{margin:0 0 1.4rem;padding:1.1rem 1.25rem;background:#E9EFE4;border:2px solid #A7B89A;border-left:7px solid var(--sage-deep);border-radius:4px 18px 18px 18px;box-shadow:3px 4px 0 rgba(82,104,73,.1)}
+.mission-card p{margin:0;max-width:42ch;font-size:20px;line-height:1.55}
+.contact{background:#F0EBF5;border-top:2px solid #D7C7E6}
+.contact .wrap{max-width:850px;padding:1.2rem 1.4rem;border:2px solid #D7C7E6;border-radius:18px 18px 18px 4px;background:var(--paper);box-shadow:4px 5px 0 rgba(14,42,71,.08)}
+.contact h2{margin-bottom:.5rem}
+.contact .lead{width:100%;max-width:43ch;margin:0 0 1.2rem;text-align:left;text-wrap:balance;line-height:1.6}
+.contact .btn{border-radius:14px}
+@media(max-width:900px){
+  .brand{max-width:42%}.brand-name{font-size:22px!important}.brand-tagline{font-size:18px!important}
+  .hero-layout{grid-template-columns:1fr 1fr;gap:1.3rem}.hero-copy{padding-left:.35rem}.hero h1{font-size:clamp(2.1rem,5vw,3rem)}
+  .cats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .about .wrap{grid-template-columns:minmax(210px,.7fr) minmax(0,1.3fr)}
+}
+@media(max-width:700px){
+  .brand{max-width:calc(100% - 92px);gap:.5rem}.brand img{width:44px;height:44px}.brand-name{font-size:21px!important}.brand-tagline{font-size:18px!important;line-height:1.2}
+  .hero{padding:1.1rem 0 1.5rem}.hero:before{inset:7px;border-radius:17px}.hero:after{right:7%;top:.7rem;font-size:20px}
+  .hero-layout{grid-template-columns:1fr;gap:1rem}.hero-copy{padding:1rem .4rem .1rem}.hero h1{font-size:2.25rem;max-width:16ch}.hero p{font-size:18px;line-height:1.55}
+  .hero-actions{grid-template-columns:1fr 1fr}.hero-actions .btn{min-height:50px;padding:.55rem .5rem;font-size:18px}.hero-actions .btn:last-child{grid-column:auto}
+  .hero-art{max-width:350px;padding:1rem 1rem .8rem}.hero-books{gap:.65rem}.hero-art-label{text-align:left}.cloud-doodle{width:70px;top:-1rem;right:5%}
+  .start-section{padding:1.5rem 0}.shop-banner{padding:.85rem}
+  .cats{grid-template-columns:repeat(2,minmax(0,1fr));gap:.7rem}.cat{padding:.65rem .6rem .8rem}.cat-covers{height:74px;gap:.25rem;margin-bottom:.55rem}.cat-covers img{width:38px;height:52px}.cat-covers img:nth-child(2){height:58px}.cat-covers svg{width:53px;height:58px}.cat h3{font-size:18px}.cat p{font-size:18px}
+  .about .wrap{grid-template-columns:1fr;gap:1rem}.about-photo{max-width:290px;margin:0 auto}.mission-card p{font-size:18px}
+  .contact .wrap{padding:1rem;border-radius:15px}.contact .lead{max-width:43ch;text-wrap:balance}
+}
+
 </style>
 </head>
 <body>
@@ -118,10 +215,11 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem}
 
 <header>
   <div class="wrap bar">
-    <a class="brand" href="#top"><img src="icon.webp" alt=""><span>Tansley Express</span></a>
-    <nav aria-label="Main">
+    <a class="brand" href="#top" aria-label="Tansley Express home"><img src="icon.webp" alt="Tansley Express logo" width="46" height="46"><span class="brand-copy"><span class="brand-name">Tansley Express</span><span class="brand-tagline">Neurodivergent-friendly learning</span></span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
+    <nav id="main-nav" aria-label="Main">
       <ul>
-        <li><a href="#books">Books</a></li>
+        <li><a href="#books">Bookshop</a></li>
         <li><a href="#categories">Categories</a></li>
         <li><a href="#tales">Free stories</a></li>
         <li><a href="#about">About</a></li>
@@ -133,50 +231,85 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem}
 
 <main id="top">
   <div class="hero">
-    <div class="wrap">
-      <div>
+    <div class="wrap hero-layout">
+      <div class="hero-copy">
+        <p class="eyebrow">The Tansley Express bookshop</p>
         <h1>Children's books made for every kind of reader</h1>
         <p>Story books, activity books and colouring books created by Tania Jacobs, a teacher and mum who knows that some children learn differently, and that every one of them deserves to love books.</p>
-        <a class="btn" href="#books">Browse the books</a>
-        <a class="btn ghost" href="https://tansleytales.com">Read free stories</a>
+        <div class="hero-actions">
+          <a class="btn" href="#books">Browse the books</a>
+          <a class="btn secondary" href="https://tansleytales.com">Read free stories</a>
+        </div>
+        <p class="book-note">A neurodivergent-friendly bookshop for stories, activity books and learning resources.</p>
       </div>
-      <img src="icon.webp" alt="Tansley Express logo: a girl leaping with a balloon">
+      <div class="hero-art" aria-label="A small selection from the Tansley Express bookshelf">
+        <svg class="cloud-doodle" viewBox="0 0 96 54" aria-hidden="true"><path d="M20 39h53a12 12 0 0 0 0-24 18 18 0 0 0-34-4 15 15 0 0 0-19 13 8 8 0 0 0 0 15Z"/><path class="cloud-star" d="m82 8 2 5 5 2-5 2-2 5-2-5-5-2 5-2 2-5Z"/></svg>
+        <div class="hero-books">
+          <figure><img src="benny.webp" alt="Benny the Bunny's Bold Leap book cover" fetchpriority="high"></figure>
+          <figure><img src="hopmath.webp" alt="Hop Into Math book cover" fetchpriority="high"></figure>
+          <figure><img src="dinosaur.webp" alt="Dinosaur Fun Facts book cover" fetchpriority="high"></figure>
+        </div>
+        <p class="hero-art-label">Stories, activity books and learning resources</p>
+      </div>
     </div>
   </div>
 
+  
+
+<section class="start-section" id="books">
+    <div class="wrap">
+      <div class="start-top"><div><h2>Start here</h2><p>Begin with a story or explore the full bookshelf.</p></div></div>
+      <div class="start-grid" id="start-grid"></div>
+      <p class="empty-start" id="start-empty" hidden></p>
+      <div class="shelf-opening"><button class="btn" type="button" id="show-all" aria-expanded="false" aria-controls="full-shelf">See the full shelf</button></div>
+    </div>
+  </section>
   <div class="promise">
     <ul class="wrap">
-      <li><span class="dot" aria-hidden="true">Aa</span><span><b>Dyslexia-friendly</b>Clear fonts, calm pages, room to breathe.</span></li>
-      <li><span class="dot" aria-hidden="true">✎</span><span><b>Made by a teacher</b>Shaped by years in the classroom.</span></li>
-      <li><span class="dot" aria-hidden="true">♥</span><span><b>Kind stories</b>Gentle, warm and inclusive.</span></li>
-      <li><span class="dot" aria-hidden="true">⬇</span><span><b>Instant downloads</b>Print at home or in class.</span></li>
+      <li><span><b>Dyslexia-friendly</b>Clear fonts, calm pages, room to breathe.</span></li>
+      <li><span><b>Made by a teacher</b>Shaped by years in the classroom.</span></li>
+      <li><span><b>Kind stories</b>Gentle, warm and inclusive.</span></li>
+      <li><span><b>Instant downloads</b>Print at home or in class.</span></li>
     </ul>
   </div>
-
-  <section id="categories">
+  <div class="full-shelf" id="full-shelf" hidden>
+  <section id="categories" class="section-rule">
     <div class="wrap">
       <h2>Find the right book</h2>
       <p class="lead">Every book sits in one clear shelf, so you can find what you need quickly.</p>
       <div class="cats">
-        <a class="cat" href="#books" data-go="Story Books"><div class="ico" aria-hidden="true">📖</div><h3>Story Books</h3><p>Picture books and longer reads to enjoy together.</p></a>
-        <a class="cat" href="#books" data-go="Handwriting and Pencil Control"><div class="ico" aria-hidden="true">✏️</div><h3>Handwriting and Pencil Control</h3><p>Tracing, pencil control and scissor skills.</p></a>
-        <a class="cat" href="#books" data-go="Bilingual Editions"><div class="ico" aria-hidden="true">🌍</div><h3>Bilingual Editions</h3><p>Spanish, Italian and Japanese with English.</p></a>
-        <a class="cat" href="#books" data-go="Maths and Puzzles"><div class="ico" aria-hidden="true">🔢</div><h3>Maths and Puzzles</h3><p>Riddles, word searches and focus games.</p></a>
-        <a class="cat" href="#books" data-go="Fun Facts and Learning"><div class="ico" aria-hidden="true">🦕</div><h3>Fun Facts and Learning</h3><p>Dinosaurs, oceans, seasons and our planet.</p></a>
-        <a class="cat" href="#books" data-go="Colouring Books"><div class="ico" aria-hidden="true">🖍️</div><h3>Colouring Books</h3><p>Calm, creative pages to colour and keep.</p></a>
-        <a class="cat" href="#books" data-go="Seasonal and Holidays"><div class="ico" aria-hidden="true">🎄</div><h3>Seasonal and Holidays</h3><p>Christmas, Easter, Valentine's and autumn.</p></a>
-        <a class="cat" href="#books" data-go="Faith Books"><div class="ico" aria-hidden="true">⭐</div><h3>Faith Books</h3><p>Bible verses and nativity stories.</p></a>
-        <a class="cat" href="#books" data-go="Planners and Trackers"><div class="ico" aria-hidden="true">📒</div><h3>Planners and Trackers</h3><p>Homework and reading trackers.</p></a>
+        <a class="cat" href="#main" data-go="Story Books"><span class="cat-covers" aria-hidden="true"><img src="benny.webp" loading="lazy"><img src="milo.webp" loading="lazy"><img src="nina.webp" loading="lazy"></span><h3>Story Books</h3><p>Picture books and longer reads to enjoy together.</p></a>
+        <a class="cat" href="#main" data-go="Handwriting and Pencil Control"><span class="cat-covers" aria-hidden="true"><img src="tracing1.webp" loading="lazy"><img src="handwriting.webp" loading="lazy"><img src="tracing2.webp" loading="lazy"></span><h3>Handwriting and Pencil Control</h3><p>Tracing, pencil control and scissor skills.</p></a>
+        <a class="cat" href="#main" data-go="Bilingual Editions"><span class="cat-covers" aria-hidden="true"><img src="spanishhand.webp" loading="lazy"><img src="italianhand.webp" loading="lazy"><img src="japanesehand.webp" loading="lazy"></span><h3>Bilingual Editions</h3><p>Spanish, Italian and Japanese with English.</p></a>
+        <a class="cat" href="#main" data-go="Maths and Puzzles"><span class="cat-covers" aria-hidden="true"><img src="hopmath.webp" loading="lazy"><img src="autumnriddles.webp" loading="lazy"><img src="autumn90.webp" loading="lazy"></span><h3>Maths and Puzzles</h3><p>Riddles and word searches.</p></a>
+        <a class="cat" href="#main" data-go="Fun Facts and Learning"><span class="cat-covers" aria-hidden="true"><img src="dinosaur.webp" loading="lazy"><img src="ocean.webp" loading="lazy"><img src="autumnfacts.webp" loading="lazy"></span><h3>Fun Facts and Learning</h3><p>Dinosaurs, oceans, seasons and our planet.</p></a>
+        <a class="cat" href="#main" data-go="Colouring Books"><span class="cat-covers" aria-hidden="true"><img src="valentine.webp" loading="lazy"><img src="xmascol.webp" loading="lazy"><img src="brave.webp" loading="lazy"></span><h3>Colouring Books</h3><p>Calm, creative pages to colour and keep.</p></a>
+        <a class="cat" href="#main" data-go="Seasonal and Holidays"><span class="cat-covers" aria-hidden="true"><img src="xmascol.webp" loading="lazy"><img src="easterscissor.webp" loading="lazy"><img src="autumn90.webp" loading="lazy"></span><h3>Seasonal and Holidays</h3><p>Christmas, Easter, Valentine's and autumn.</p></a>
+        <a class="cat" href="#main" data-go="Faith Books"><span class="cat-covers faith-art" aria-hidden="true"><svg viewBox="0 0 120 88"><path d="M60 24c-14-11-29-10-42-5v49c15-5 29-5 42 6 13-11 27-11 42-6V19c-13-5-28-6-42 5Z"/><path d="M60 24v50M28 34c9-2 18 0 25 4M92 34c-9-2-18 0-25 4"/><path class="faith-star" d="m19 10 2 5 5 2-5 2-2 5-2-5-5-2 5-2 2-5Z"/></svg><img src="xmascol.webp" loading="lazy"></span><h3>Faith Books</h3><p>Bible verses and nativity stories.</p></a>
+        <a class="cat" href="#main" data-go="Planners and Trackers"><span class="cat-covers" aria-hidden="true"><img src="homework.webp" loading="lazy"><img src="readingjournal.webp" loading="lazy"><img src="handwriting.webp" loading="lazy"></span><h3>Planners and Trackers</h3><p>Homework and reading trackers.</p></a>
       </div>
     </div>
   </section>
 
-  <section id="books" style="padding-top:0">
-    <div class="wrap" id="main">
+  <section id="main" class="shelf-list" style="padding-top:0">
+    <div class="wrap">
       <h2>The bookshelf</h2>
       <p class="lead">Choose a shelf, or browse everything.</p>
       <div class="filters" role="group" aria-label="Filter books by category"></div>
       <div class="grid" id="grid"></div>
+    </div>
+  </section>
+  </div>
+
+<section class="apps" id="apps">
+    <div class="wrap">
+      <h2>Apps for families</h2>
+      <p class="lead">Simple tools to support learning at home.</p>
+      <article class="app-card">
+        <div class="app-mark"><img src="icon.webp" alt="Tansley Express brand mark" loading="lazy"></div>
+        <div><h3>Spell Ready</h3><p>A family spelling app for practising English words together.</p></div>
+        <a class="btn" href="spell-ready/">Try it</a>
+      </article>
     </div>
   </section>
 
@@ -188,25 +321,29 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem}
         <a class="btn" href="https://tansleytales.com">Visit Tansley Tales</a>
       </div>
       <div class="covers">
-        <img src="milo.webp" alt="Milo and the Starry Sand">
-        <img src="benny.webp" alt="Benny the Bunny's Bold Leap">
-        <img src="nina.webp" alt="Nina's Tasty Trip">
-        <img src="lion.webp" alt="The Lion Who Was Afraid of the Dark">
-        <img src="bramble1.webp" alt="Bramble and the First Frost">
-        <img src="knights.webp" alt="The Number Knights">
+        <img src="milo.webp" loading="lazy" alt="Milo and the Starry Sand">
+        <img src="benny.webp" loading="lazy" alt="Benny the Bunny's Bold Leap">
+        <img src="nina.webp" loading="lazy" alt="Nina's Tasty Trip">
+        <img src="lion.webp" loading="lazy" alt="The Lion Who Was Afraid of the Dark">
+        <img src="bramble1.webp" loading="lazy" alt="Bramble and the First Frost">
+        <img src="knights.webp" loading="lazy" alt="The Number Knights">
       </div>
     </div>
   </section>
 
   <section id="about" class="about">
     <div class="wrap">
-      <img src="icon.webp" alt="">
+      <figure class="about-photo"><img src="tania-jacobs-profile.webp" width="720" height="883" alt="Tania Jacobs, teacher, author and mum" loading="lazy"></figure>
       <div>
         <h2>About Tania Jacobs</h2>
-        <p>I'm Tania, a teacher, a children's author and a single mum. My own child learns differently, and watching homework turn into tears taught me something important: when a book is hard to read, children start to believe they are the problem. They aren't.</p>
-        <p>Tansley Express is where I share books made the way I wish more books were made. Clear, calm pages. Stories with heart. Characters every child can see themselves in. Whether your child is a confident reader or still finding their way, there is a place for them here.</p>
-        <p>Thank you for being part of this little corner of the world.</p>
-        <p><b>Tania</b></p>
+        <div class="mission-card"><h3>My mission</h3><p>To support, educate and empower neurodivergent learners to thrive in a way that feels right for them.</p></div>
+        <h3>Hello, I'm Tania</h3>
+        <p>I'm a teacher, a children's author and the person behind Tansley Express. I hold a BA degree and a teaching certificate, and for years I've helped learners grow in confidence, one small step at a time.</p>
+        <p>I'm also a mum to a child who learns differently. Watching my own child taught me that a bright, curious and creative child can still find reading and writing hard, and that many books simply aren't made with them in mind. I wanted to change that.</p>
+        <p>That's why I create every Tansley Express resource with care. Clear, calm pages. Gentle stories. Activities that feel manageable, not overwhelming. Everything is made for children, families and teachers who want learning to feel a little more welcoming.</p>
+        <p>My hope is simple: that each book brings a little more confidence to a child's day, and makes things feel easier for the grown-ups beside them.</p>
+        <p>Thank you for stopping by. I'm so glad you're here.</p>
+        <p class="signature"><b>Tania Jacobs</b><span>Teacher, author and creator of Tansley Express</span></p>
       </div>
     </div>
   </section>
@@ -230,7 +367,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem}
 <script>
 /* ===== THE BOOK LIST =====
    To add or change a book, edit this list only.
-   buy:    paste the Payhip (or Amazon) link here. Empty = shows "Coming soon".
+   buy:    paste the Tansley Express purchase link here. Empty = show paperback availability.
    read:   link to read it free on Tansley Tales (optional).
    img:    picture file name (640x480 .webp, same folder). Leave empty for a text cover.  */
 const BOOKS = [
@@ -251,7 +388,6 @@ const BOOKS = [
   {cat:"Handwriting and Pencil Control", title:"My First Tracing: Pencil Control", text:"Gentle tracing pages that build pencil control before letters begin.", img:"tracing1", buy:""},
   {cat:"Handwriting and Pencil Control", title:"Handwriting and Tracing Book", text:"Trace letters, numbers and shapes, one calm page at a time.", img:"handwriting", buy:""},
   {cat:"Handwriting and Pencil Control", title:"Tracing Activities", text:"Fun tracing practice for steady hands and growing confidence.", img:"tracing2", buy:""},
-  {cat:"Handwriting and Pencil Control", title:"Scissor Skills Activities", text:"Cut, snip and create while building fine motor skills.", buy:""},
 
   /* ---- Bilingual Editions ---- */
   {cat:"Bilingual Editions", title:"Spanish Pencil Control Book", text:"Pencil control practice with Spanish and English words.", img:"spanishpencil", buy:""},
@@ -263,16 +399,14 @@ const BOOKS = [
 
   /* ---- Maths and Puzzles ---- */
   {cat:"Maths and Puzzles", title:"Hop Into Math", text:"Bright, friendly maths practice that makes numbers fun.", img:"hopmath", buy:""},
-  {cat:"Maths and Puzzles", also:"Seasonal and Holidays", title:"90 Autumn Math Riddles", text:"Autumn-themed riddles that turn maths into a game.", buy:""},
+  {cat:"Maths and Puzzles", also:"Seasonal and Holidays", title:"90 Autumn Math Riddles", img:"autumn90", text:"Autumn-themed riddles that turn maths into a game.", buy:""},
   {cat:"Maths and Puzzles", also:"Seasonal and Holidays", title:"Pumpkins, Leaves and Numbers Math Riddles", text:"Cosy autumn number riddles to solve together.", img:"autumnriddles", buy:""},
-  {cat:"Maths and Puzzles", title:"Word Search Fun 100", text:"One hundred word searches for quiet, happy puzzle time.", buy:""},
-  {cat:"Maths and Puzzles", title:"5 Minute Focus Exercises", text:"Short, calm activities that help busy minds settle and focus.", buy:""},
+  {cat:"Maths and Puzzles", title:"Word Search Fun 100", img:"wordsearch", text:"One hundred word searches for quiet, happy puzzle time.", buy:""},
 
   /* ---- Fun Facts and Learning ---- */
   {cat:"Fun Facts and Learning", title:"Dinosaur Fun Facts", text:"Roar-some facts about dinosaurs, with activities to match.", img:"dinosaur", buy:""},
   {cat:"Fun Facts and Learning", title:"Oceans Fun Facts", text:"Dive into amazing facts about the ocean and its creatures.", img:"ocean", buy:""},
-  {cat:"Fun Facts and Learning", also:"Seasonal and Holidays", title:"Autumn Fun Facts", text:"Discover why leaves change colour, and much more about autumn.", buy:""},
-  {cat:"Fun Facts and Learning", title:"Ocean and Earth Day Workbooks", text:"Learn to love and look after our planet and its oceans.", buy:""},
+  {cat:"Fun Facts and Learning", also:"Seasonal and Holidays", title:"Autumn Fun Facts", img:"autumnfacts", text:"Discover why leaves change colour, and much more about autumn.", buy:""},
 
   /* ---- Colouring Books ---- */
   {cat:"Colouring Books", title:"Patch's Path to Calm and Confidence", text:"Colour along with Patch the hedgehog while learning calm, confident ways to handle big feelings.", buy:""},
@@ -292,11 +426,13 @@ const BOOKS = [
   {cat:"Faith Books", also:"Colouring Books", title:"50 Memory Verses to Colour and Remember: Teen Edition", text:"The memory verse colouring book, designed for older children and teens.", buy:"", note:"Coming soon"},
 
   /* ---- Planners and Trackers ---- */
-  {cat:"Planners and Trackers", title:"Homework Tracker", text:"A calm, simple way to keep homework on track, without the tears.", buy:""},
-  {cat:"Planners and Trackers", title:"Reading Journal and Tracker", text:"Record every book read and celebrate each one.", buy:""}
+  {cat:"Planners and Trackers", title:"Homework Tracker", img:"homework", text:"A calm, simple way to keep homework on track, without the tears.", buy:""},
+  {cat:"Planners and Trackers", title:"Reading Journal and Tracker", img:"readingjournal", text:"Record every book read and celebrate each one.", buy:""}
 ];
 
 const CATS = ["All books","Story Books","Handwriting and Pencil Control","Bilingual Editions","Maths and Puzzles","Fun Facts and Learning","Colouring Books","Seasonal and Holidays","Faith Books","Planners and Trackers"];
+// Titles confirmed as having a paperback listing on Amazon. Add titles here as more editions appear.
+const AMAZON_AVAILABLE = new Set(["90 Autumn Math Riddles","Pumpkins, Leaves and Numbers Math Riddles","Dinosaur Fun Facts"]);
 const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const grid = document.getElementById("grid");
 const filters = document.querySelector(".filters");
@@ -305,11 +441,15 @@ function card(b){
   const pic = b.img
     ? `<div class="pic"><img src="${esc(b.img)}.webp" alt="" loading="lazy"></div>`
     : `<div class="pic text">${esc(b.title)}</div>`;
+  const localPrice = b.price ? (/^R\s?/i.test(String(b.price)) ? String(b.price) : "R " + String(b.price)) : "";
+  const price = localPrice ? `<p class="price">${esc(localPrice)}</p>` : "";
+  const amazonStatus = AMAZON_AVAILABLE.has(b.title) ? "Paperback available on Amazon" : "Paperback available on Amazon soon";
   const buy = b.buy
-    ? `<a class="btn small" href="${esc(b.buy)}">Buy${b.price ? " · " + esc(b.price) : ""}</a>`
-    : `<span class="btn small off">${esc(b.note || (b.read ? "Print book coming soon" : "Coming soon"))}</span>`;
+    ? `<a class="btn small" href="${esc(b.buy)}">${localPrice ? "Buy · " + esc(localPrice) : "Buy this book"}</a>`
+    : "";
+  const availability = `<span class="availability${AMAZON_AVAILABLE.has(b.title) ? " available" : " soon"}">${amazonStatus}</span>`;
   const read = b.read ? `<a class="link" href="${esc(b.read)}">Read free</a>` : "";
-  return `<article class="card">${pic}<div class="body"><span class="tag">${esc(b.cat)}</span><h3>${esc(b.title)}</h3><p>${esc(b.text)}</p><div class="actions">${buy}${read}</div></div></article>`;
+  return `<article class="card">${pic}<div class="body"><span class="tag">${esc(b.cat)}</span><h3>${esc(b.title)}</h3><p>${esc(b.text)}</p>${price}<div class="actions">${buy}${availability}${read}</div></div></article>`;
 }
 function show(cat){
   grid.innerHTML = BOOKS.filter(b => cat === "All books" || b.cat === cat || b.also === cat).map(card).join("");
@@ -317,9 +457,39 @@ function show(cat){
 }
 filters.innerHTML = CATS.map(c => `<button type="button" aria-pressed="false">${c}</button>`).join("");
 filters.addEventListener("click", e => { if (e.target.tagName === "BUTTON") show(e.target.textContent); });
-document.querySelectorAll("[data-go]").forEach(a => a.addEventListener("click", () => show(a.dataset.go)));
 document.getElementById("yr").textContent = new Date().getFullYear();
 show("All books");
+
+const startGrid = document.getElementById("start-grid");
+const startEmpty = document.getElementById("start-empty");
+const fullShelf = document.getElementById("full-shelf");
+const showAllButton = document.getElementById("show-all");
+const readyBooks = BOOKS.filter(b => b.buy || AMAZON_AVAILABLE.has(b.title));
+const startBooks = readyBooks.length ? readyBooks.slice(0, 4) : BOOKS.filter(b => b.cat === "Story Books").slice(0, 4);
+startGrid.innerHTML = startBooks.map(card).join("");
+function openShelf(target) {
+  fullShelf.hidden = false;
+  showAllButton.setAttribute("aria-expanded", "true");
+  if (target) show(target);
+}
+showAllButton.addEventListener("click", () => {
+  openShelf("All books");
+  document.getElementById("categories").scrollIntoView({block:"start"});
+});
+document.querySelectorAll('a[href="#categories"]').forEach(a => a.addEventListener("click", () => openShelf("All books")));
+document.querySelectorAll("[data-go]").forEach(a => a.addEventListener("click", () => openShelf(a.dataset.go)));
+document.querySelector(".skip").addEventListener("click", () => openShelf("All books"));
+const menuButton = document.querySelector(".menu-toggle");
+const mainNav = document.getElementById("main-nav");
+menuButton.addEventListener("click", () => {
+  const open = menuButton.getAttribute("aria-expanded") !== "true";
+  menuButton.setAttribute("aria-expanded", String(open));
+  mainNav.classList.toggle("open", open);
+});
+mainNav.querySelectorAll("a").forEach(a => a.addEventListener("click", () => {
+  menuButton.setAttribute("aria-expanded", "false");
+  mainNav.classList.remove("open");
+}));
 </script>
 </body>
 </html>
