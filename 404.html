@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>We've moved | Tansley Express</title>
+<link rel="icon" href="/favicon.png">
+<script>
+/* Old Shopify links (from Pinterest, Facebook, Instagram, TikTok, Google)
+   are sent straight to the right part of the new site. */
+(function () {
+  var p = location.pathname.toLowerCase();
+  var target = null;
+  if (/^\/(products|collections|cart|checkout|search)(\/|$)/.test(p)) target = '/#books';
+  else if (/^\/pages\/(contact|contact-us)/.test(p)) target = '/#contact';
+  else if (/^\/pages\/(about|about-us|our-story)/.test(p)) target = '/#about';
+  else if (/^\/(blogs|pages|account)(\/|$)/.test(p)) target = '/';
+  if (target) location.replace(target);
+  else setTimeout(function () { location.replace('/'); }, 5000);
+})();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Lexend:wght@300;400;600&display=swap">
+<style>
+  :root { --navy:#0E2A47; --sage-deep:#526849; --cream:#F7F2E9; --paper:#FFFCF6; --peach:#F3C9B2; }
+  * { box-sizing: border-box; }
+  body { margin:0; min-height:100vh; display:flex; align-items:center; justify-content:center;
+         background:var(--cream); color:var(--navy); font-family:"Lexend","Verdana",sans-serif;
+         font-size:1.15rem; line-height:1.7; letter-spacing:0.02em; padding:24px; }
+  main { background:var(--paper); max-width:520px; width:100%; padding:40px 32px; border-radius:24px;
+         text-align:center; box-shadow:0 8px 30px rgba(14,42,71,0.08); }
+  h1 { font-family:"Fredoka","Trebuchet MS",sans-serif; font-weight:600; font-size:2rem; margin:0 0 12px; }
+  p { margin:0 0 24px; }
+  a.btn { display:inline-block; background:var(--sage-deep); color:#fff; text-decoration:none;
+          font-weight:600; padding:16px 28px; border-radius:999px; min-height:48px; }
+  a.btn:focus, a.btn:hover { background:var(--navy); outline:3px solid var(--peach); outline-offset:3px; }
+  .small { font-size:0.95rem; margin:20px 0 0; }
+</style>
+</head>
+<body>
+<main>
+  <h1>We've moved!</h1>
+  <p>Tansley Express has a brand new home. All the books are still here, just easier to find.</p>
+  <a class="btn" href="/#books">See the books</a>
+  <p class="small">Taking you to the home page in a few seconds.</p>
+</main>
+</body>
+</html>
