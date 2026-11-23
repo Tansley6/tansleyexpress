@@ -71,7 +71,7 @@ h2{font-family:var(--display);font-weight:600;font-size:2rem;margin:0 0 .4rem}
 .steps p,.acts p{margin:0;color:var(--muted);font-size:1rem}
 .acts{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
 .act{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:1.3rem}
-.act .ico{font-size:1.8rem;width:3.2rem;height:3.2rem;border-radius:14px;background:var(--mint);display:grid;place-items:center;margin-bottom:.6rem}
+.act .ico{width:4.2rem;height:4.2rem;border-radius:18px;background:var(--mint);display:grid;place-items:center;margin-bottom:.8rem;padding:.55rem;box-sizing:border-box}.act .ico svg{width:100%;height:100%;display:block}
 
 .note{background:#f4ecf7}
 .note .card{background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:2rem 2.2rem;max-width:46rem}
@@ -104,6 +104,7 @@ footer a{color:var(--cream)}
   .note .card{padding:1.5rem 1.3rem}
 }
 @media(prefers-reduced-motion:reduce){*{transition:none!important}}
+.sr-logo{display:flex;align-items:center;gap:18px;margin:0 0 22px}.sr-logo img{width:130px;height:130px;border-radius:50%;flex:none;box-shadow:0 6px 18px rgba(47,93,80,.15)}.sr-logo-name{margin:0;font-size:2.4rem;font-weight:800;letter-spacing:-.03em;color:#2d4a40;line-height:1.1}.sr-logo-tag{margin:6px 0 0;font-size:.8rem;letter-spacing:.18em;line-height:1.4;text-transform:uppercase;color:#61716a;font-weight:600}@media(max-width:600px){.sr-logo img{width:104px;height:104px}.sr-logo-name{font-size:1.7rem}}
 </style>
 </head>
 <body>
@@ -127,6 +128,7 @@ footer a{color:var(--cream)}
   <div class="hero">
     <div class="wrap">
       <div>
+        <div class="sr-logo"><img src="meerkat-badge.webp" alt="Spell Ready meerkat logo" width="150" height="150"><div><div class="sr-logo-name">Spell Ready</div><div class="sr-logo-tag">Calm spelling practice</div></div></div>
         <span class="eyebrow">New from Tania Jacobs</span>
         <h1>Spell Ready: calm spelling practice with your child's own words</h1>
         <p>Type in this week's spelling list. Spell Ready reads each word aloud in a clear British voice, and your child practises at their own pace. No stars, no scores, no pressure.</p>
@@ -168,12 +170,12 @@ footer a{color:var(--cream)}
       <h2>Six calm ways to practise</h2>
       <p class="lead">Your child chooses what feels right on the day. Every activity uses their own words.</p>
       <div class="acts">
-        <div class="act"><div class="ico" aria-hidden="true">👀</div><h3>Learn It</h3><p>Look, cover, try and compare.</p></div>
-        <div class="act"><div class="ico" aria-hidden="true">🔊</div><h3>Hear and Spell</h3><p>Listen closely, then give it a go.</p></div>
-        <div class="act"><div class="ico" aria-hidden="true">🧩</div><h3>Missing Letters</h3><p>Find the pieces that belong.</p></div>
-        <div class="act"><div class="ico" aria-hidden="true">🔀</div><h3>Unscramble</h3><p>Bring the letters back together.</p></div>
-        <div class="act"><div class="ico" aria-hidden="true">🌿</div><h3>Chunk It</h3><p>Small chunks. Bigger confidence.</p></div>
-        <div class="act"><div class="ico" aria-hidden="true">📝</div><h3>Practice Test</h3><p>A quiet moment to try the words.</p></div>
+        <div class="act"><div class="ico" aria-hidden="true" style="background:rgb(228, 236, 222)"><svg class="sr-art " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="#31564b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path fill="#fff9e9" d="M9 15c8-4 16-3 23 2 7-5 15-6 23-2v35c-8-4-16-3-23 2-7-5-15-6-23-2Z"></path><path d="M32 18v34M15 24c4-1 8 0 11 2m-11 6c4-1 8 0 11 2m12-8c3-2 7-3 11-2m-11 10c3-2 7-3 11-2"></path><path stroke="#e1bc69" stroke-width="3" d="m44 9 1-4m7 7 3-3"></path></svg></div><h3>Learn It</h3><p>Look, cover, try and compare.</p></div>
+        <div class="act"><div class="ico" aria-hidden="true" style="background:rgb(250, 231, 206)"><svg class="sr-art " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="#31564b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path fill="#fff9e9" d="M14 36v-6a18 18 0 0 1 36 0v6"></path><path stroke-width="4" d="M14 32v-3a18 18 0 0 1 36 0v3"></path><rect x="9" y="31" width="11" height="20" rx="5" fill="#93ae8a"></rect><rect x="44" y="31" width="11" height="20" rx="5" fill="#93ae8a"></rect><path d="M33 27c-5 0-8 4-8 8m8-1c-2 0-3 2-3 4 0 4 5 4 5 8 0 3-2 6-5 6"></path></svg></div><h3>Hear and Spell</h3><p>Listen closely, then give it a go.</p></div>
+        <div class="act"><div class="ico" aria-hidden="true" style="background:rgb(233, 231, 240)"><svg class="sr-art " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="#31564b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path fill="#fff9e9" d="M12 13h13c-2 7 1 11 6 11s8-4 6-11h14v14c-7-2-11 1-11 6s4 8 11 6v13H37c2-7-1-11-6-11s-8 4-6 11H12V39c7 2 11-1 11-6s-4-8-11-6Z"></path><path stroke="#e1bc69" stroke-width="3" d="m7 6-2-2m50 52 3 3"></path></svg></div><h3>Missing Letters</h3><p>Find the pieces that belong.</p></div>
+        <div class="act"><div class="ico" aria-hidden="true" style="background:rgb(250, 237, 197)"><svg class="sr-art " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="#31564b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="7" y="11" width="20" height="22" rx="5" fill="#fff9e9"></rect><path d="m13 26 4-9 4 9m-6-3h5"></path><rect x="37" y="33" width="20" height="22" rx="5" fill="#e1bc69"></rect><path d="M44 39h5a3 3 0 0 1 0 6h-5m0-6v11h5a3 3 0 0 0 0-6"></path><path d="M36 15h14v10m-7-7 7 7 7-7M28 49H14V39m7 7-7-7-7 7"></path></svg></div><h3>Unscramble</h3><p>Bring the letters back together.</p></div>
+        <div class="act"><div class="ico" aria-hidden="true" style="background:rgb(229, 237, 220)"><svg class="sr-art " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="#31564b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path fill="#93ae8a" d="M33 49c-1-17 7-28 22-29 1 14-7 24-22 29Z"></path><path fill="#fff9e9" d="M32 39C16 39 8 29 9 16c15 1 24 9 23 23Z"></path><path d="M32 57V35M18 25l14 14m12-9L33 43"></path><circle cx="33" cy="12" r="5" fill="#e1bc69"></circle></svg></div><h3>Chunk It</h3><p>Small chunks. Bigger confidence.</p></div>
+        <div class="act"><div class="ico" aria-hidden="true" style="background:rgb(224, 236, 234)"><svg class="sr-art " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="#31564b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="13" y="12" width="38" height="46" rx="6" fill="#fff9e9"></rect><rect x="23" y="7" width="18" height="10" rx="4" fill="#93ae8a"></rect><path d="m21 29 3 3 5-6m-8 17 3 3 5-6m6-11h9m-9 14h9"></path></svg></div><h3>Practice Test</h3><p>A quiet moment to try the words.</p></div>
       </div>
     </div>
   </section>
