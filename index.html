@@ -280,7 +280,7 @@ nav{flex:0 0 auto}
       <p class="lead">Every book sits in one clear shelf, so you can find what you need quickly.</p>
       <div class="cats">
         <a class="cat" href="#main" data-go="Story Books"><span class="cat-covers" aria-hidden="true"><img src="thumb-benny.webp" loading="lazy" alt=""><img src="thumb-milo.webp" loading="lazy" alt=""><img src="thumb-nina.webp" loading="lazy" alt=""></span><h3>Story Books</h3><p>Picture books and longer reads to enjoy together.</p></a>
-        <a class="cat" href="#main" data-go="Handwriting and Pencil Control"><span class="cat-covers" aria-hidden="true"><img src="thumb-tracing1.webp" loading="lazy" alt=""><img src="thumb-handwriting.webp" loading="lazy" alt=""><img src="thumb-tracing2.webp" loading="lazy" alt=""></span><h3>Handwriting and Pencil Control</h3><p>Tracing, pencil control and scissor skills.</p></a>
+        <a class="cat" href="#main" data-go="Handwriting and Pencil Control"><span class="cat-covers" aria-hidden="true"><img src="thumb-easterscissor.webp" loading="lazy" alt=""><img src="thumb-handwriting.webp" loading="lazy" alt=""><img src="thumb-tracing2.webp" loading="lazy" alt=""></span><h3>Handwriting and Pencil Control</h3><p>Tracing, pencil control and scissor skills.</p></a>
         <a class="cat" href="#main" data-go="Bilingual Editions"><span class="cat-covers" aria-hidden="true"><img src="thumb-spanishhand.webp" loading="lazy" alt=""><img src="thumb-italianhand.webp" loading="lazy" alt=""><img src="thumb-japanesehand.webp" loading="lazy" alt=""></span><h3>Bilingual Editions</h3><p>Spanish, Italian and Japanese with English.</p></a>
         <a class="cat" href="#main" data-go="Maths and Puzzles"><span class="cat-covers" aria-hidden="true"><img src="thumb-hopmath.webp" loading="lazy" alt=""><img src="thumb-autumnriddles.webp" loading="lazy" alt=""><img src="thumb-autumn90.webp" loading="lazy" alt=""></span><h3>Maths and Puzzles</h3><p>Riddles and word searches.</p></a>
         <a class="cat" href="#main" data-go="Fun Facts and Learning"><span class="cat-covers" aria-hidden="true"><img src="thumb-dinosaur.webp" loading="lazy" alt=""><img src="thumb-ocean.webp" loading="lazy" alt=""><img src="thumb-autumnfacts.webp" loading="lazy" alt=""></span><h3>Fun Facts and Learning</h3><p>Dinosaurs, oceans, seasons and our planet.</p></a>
@@ -388,14 +388,13 @@ const BOOKS = [
   {cat:"Story Books", also:"Seasonal and Holidays", noNote:true, title:"The Sounds of Autumn", text:"Listen closely and discover all the sounds autumn makes.", img:"soa", read:"https://tansleytales.com/the-sounds-of-autumn.html", buy:""},
 
   /* ---- Handwriting and Pencil Control ---- */
-  {noNote:true, cat:"Handwriting and Pencil Control", title:"My First Tracing: Pencil Control", text:"Gentle tracing pages that build pencil control before letters begin.", img:"tracing1", buy:""},
-  {noNote:true, cat:"Handwriting and Pencil Control", title:"Handwriting and Tracing Book", text:"Trace letters, numbers and shapes, one calm page at a time.", img:"handwriting", buy:""},
-  {noNote:true, cat:"Handwriting and Pencil Control", title:"Tracing Activities", text:"Fun tracing practice for steady hands and growing confidence.", img:"tracing2", buy:""},
+  {cat:"Handwriting and Pencil Control", title:"My First Tracing Workbook (Handwriting)", text:"Handwriting practice for ages 3 to 6. Trace letters, numbers and shapes, one calm page at a time.", img:"handwriting", buy:"", amazon:"https://www.amazon.com/dp/B0FLJK6971"},
+  {cat:"Handwriting and Pencil Control", title:"Trace and Color Fun (Pencil Control)", text:"Pencil control for ages 3 to 6. Lines, shapes and colouring that build steady hands before writing begins.", img:"tracing2", buy:"", amazon:"https://www.amazon.com/dp/B0DZVT3W46"},
 
   /* ---- Bilingual Editions ---- */
   {noNote:true, cat:"Bilingual Editions", title:"Spanish Pencil Control Book", text:"Pencil control practice with Spanish and English words.", img:"spanishpencil", buy:""},
   {noNote:true, cat:"Bilingual Editions", title:"Spanish Handwriting Book", text:"Handwriting practice with Spanish and English words.", img:"spanishhand", buy:""},
-  {noNote:true, cat:"Bilingual Editions", title:"Italian Pencil Control Book", text:"Pencil control practice with Italian and English words.", img:"italianpencil", buy:""},
+  {cat:"Bilingual Editions", title:"Traccia e Colora (Italian Pencil Control)", text:"Pencil control practice in Italian, for ages 3 to 6.", img:"italianpencil", buy:"", amazon:"https://www.amazon.com/dp/B0FL7KWVXV"},
   {noNote:true, cat:"Bilingual Editions", title:"Italian Handwriting Book", text:"Handwriting practice with Italian and English words.", img:"italianhand", buy:""},
   {noNote:true, cat:"Bilingual Editions", title:"Japanese Pencil Control Book", text:"Pencil control practice with Japanese and English words.", img:"japanesepencil", buy:""},
   {noNote:true, cat:"Bilingual Editions", title:"Japanese Handwriting Book", text:"Handwriting practice with Japanese and English words.", img:"japanesehand", buy:""},
